@@ -6,6 +6,14 @@ pygame.init()
 
 screen = pygame.display.set_mode((1000, 600))
 
+directory = os.getcwd()
+
+# LOAD BACKGROUND
+background_surf = pygame.image.load(directory + '/levels/level.png')
+background_surf = pygame.transform.scale(background_surf, (1000, 600))
+background_rect = background_surf.get_rect(bottomright=(1000, 600))
+screen.blit(background_surf, background_rect)
+
 pygame.display.set_caption("Анимация персонажа")
 
 directory = os.getcwd()
@@ -103,7 +111,10 @@ speed = 5
 def draw():
     global anim
 
-    screen.fill((0, 0, 0))
+    background_surf = pygame.image.load(directory + '/levels/level.png')
+    background_surf = pygame.transform.scale(background_surf, (1000, 600))
+    background_rect = background_surf.get_rect(bottomright=(1000, 600))
+    screen.blit(background_surf, background_rect)
 
     if anim + 1 >= 30:
         anim = 0
@@ -141,19 +152,29 @@ while run:
         x -= speed
         left = True
         right = False
+        up = False
+        down = False
 
     elif keys[pygame.K_RIGHT]:
         x += speed
         right = True
         left = False
+        up = False
+        down = False
 
     elif keys[pygame.K_UP]:
         y -= speed
         up = True
+        down = False
+        left = False
+        right = False
 
     elif keys[pygame.K_DOWN]:
         y += speed
         down = True
+        up = False
+        left = False
+        right = False
 
     else:
         right = False
