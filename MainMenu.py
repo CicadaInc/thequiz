@@ -18,6 +18,7 @@ class MainMenu:
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    self.pushed = self.buttons[3]
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for i in range(len(self.buttons)):
