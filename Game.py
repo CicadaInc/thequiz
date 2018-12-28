@@ -20,9 +20,8 @@ class Game:
 
             pygame.display.flip()
 
-
     def set_interface(self):
-        #SET BACKGROUND
+        # SET BACKGROUND
         directory = os.getcwd()
         background_surf = pygame.image.load(directory + '/levels/level.png')
         background_surf = pygame.transform.scale(background_surf, (1000, 600))

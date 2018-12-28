@@ -1,6 +1,6 @@
 from MainMenu import MainMenu
 from ChooseCharacter import ChooseCharacter
-from Game import Game
+from Multiplayer import Multiplayer
 import pygame
 
 mainWin = MainMenu()
@@ -16,7 +16,7 @@ while True:
                 mainWin = MainMenu()
 
             elif chooseChar.pushed == pygame.Rect(750, 515, 201, 36):  # Старт
-                gameWin = Game()
+                gameWin = Multiplayer()
                 if gameWin.pushed:
                     pass
                 else:
