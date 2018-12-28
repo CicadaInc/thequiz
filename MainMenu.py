@@ -27,6 +27,8 @@ class MainMenu:
 
     def set_interface(self):
         directory = os.getcwd()
+
+        # LOAD BACKGROUND
         background_surf = pygame.image.load(directory + '/backgrounds/main.jpg')
         background_surf = pygame.transform.scale(background_surf, (1000, 600))
         background_rect = background_surf.get_rect(bottomright=(1000, 600))
