@@ -1,17 +1,16 @@
 import pygame
+import os
 
 
 class MainMenu:
     def __init__(self):
         pygame.init()
 
-        self.winWidth = 800
+        self.winWidth = 1000
         self.winHeight = 600
-
         self.screen = pygame.display.set_mode((self.winWidth, self.winHeight))
-        self.screen.fill(pygame.Color('white'))
 
-        self.font = pygame.font.Font(None, 50)
+        self.set_interface()
 
         running = True
         while running:
@@ -19,37 +18,35 @@ class MainMenu:
                 if event.type == pygame.QUIT:
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    if self.startButton.collidepoint(event.pos):
-                        self.pushed = self.startButton
-                        running = False
-                    if self.quitButton.collidepoint(event.pos):
-                        self.pushed = self.quitButton
-                        running = False
-
-            self.render()
+                    for i in range(len(self.buttons)):
+                        if self.buttons[i].collidepoint(event.pos):
+                            self.pushed = self.buttons[i]
+                            running = False
 
             pygame.display.flip()
 
-    def render(self):
-        self.draw_start_button()
-        self.draw_quit_button()
+    def set_interface(self):
+        directory = os.getcwd()
+        background_surf = pygame.image.load(directory + '/backgrounds/main.jpg')
+        background_surf = pygame.transform.scale(background_surf, (1000, 600))
+        background_rect = background_surf.get_rect(bottomright=(1000, 600))
+        self.screen.blit(background_surf, background_rect)
 
-    def draw_start_button(self):
-        self.startButton = pygame.draw.rect(self.screen, pygame.Color('black'), pygame.Rect(500, 50, 200, 50), 3)
-        text = self.font.render("Играть", 1, (100, 25, 100))
-        text_x, text_y = 600 - text.get_width() // 2, 75 - text.get_height() // 2
-        self.screen.blit(text, (text_x, text_y))
-
-    def draw_quit_button(self):
-        self.quitButton = pygame.draw.rect(self.screen, pygame.Color('black'), pygame.Rect(500, 150, 200, 50), 3)
-        text = self.font.render("Выход", 1, (100, 25, 100))
-        text_x, text_y = 600 - text.get_width() // 2, 175 - text.get_height() // 2
-        self.screen.blit(text, (text_x, text_y))
+        self.buttons, names = [], ['Играть', 'Мультиплеер', 'Настройки', 'Выход']
+        font = pygame.font.Font(None, 50)
+        for y in range(150, 451, 100):
+            pygame.draw.rect(self.screen, (250, 175, 255),
+                             pygame.Rect(375, y, 250, 50))
+            self.buttons.append(pygame.draw.rect(self.screen, pygame.Color('black'),
+                                                 pygame.Rect(375, y, 250, 50), 2))
+            text = font.render(names[y // 100 - 1], 1, (100, 25, 100))
+            text_x, text_y = 500 - text.get_width() // 2, y + 25 - text.get_height() // 2
+            self.screen.blit(text, (text_x, text_y))
 
 
 if __name__ == "__main__":
-    def test():
+    def start():
         win = MainMenu()
 
 
-    test()
+    start()
