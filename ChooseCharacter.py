@@ -42,7 +42,7 @@ class ChooseCharacter:
                             self.pushed = self.start
                             running = False
 
-            #ПОЛЕ ВВОДА НИКА
+            # ПОЛЕ ВВОДА НИКА
             pygame.draw.rect(self.screen, (250, 175, 255),
                              pygame.Rect(665, 150, self.inp_width, self.inp_height))
             pygame.draw.rect(self.screen, (0, 0, 0),
@@ -61,6 +61,11 @@ class ChooseCharacter:
         background_rect = background_surf.get_rect(bottomright=(1000, 600))
         self.screen.blit(background_surf, background_rect)
 
+        # LOAD MUSIC
+        pygame.mixer.music.load(directory + '/sounds/loading.mp3')
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.3)
+
         # BUTTON BACK
         pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(50, 515, 200, 35))
         self.back = pygame.draw.rect(self.screen, (0, 0, 0), pygame.Rect(50, 515, 200, 35), 2)
@@ -77,23 +82,23 @@ class ChooseCharacter:
                                                            pygame.Rect(x, y, 100, 100), 2))
         pygame.draw.rect(self.screen, pygame.Color('red'), self.chooseButtons[self.choosed], 2)
 
-        #КНОПКА СТАРТА
+        # КНОПКА СТАРТА
         pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(750, 515, 200, 35))
         self.start = pygame.draw.rect(self.screen, (0, 0, 0), pygame.Rect(750, 515, 200, 35), 2)
         text_start = self.font.render("Старт", 1, (100, 25, 100))
         text_x, text_y = 850 - text_start.get_width() // 2, 550 - text_start.get_height()
         self.screen.blit(text_start, (text_x, text_y))
 
-        #ПЕРСОНАЖИ В ОКНАХ
-        characters = ['cock', 'alien', 'bird']
-        for x in range(150, 451, 150):
-            char_surf = pygame.image.load(
-                directory + '/sprites/' + characters[x // 150 - 1] + '/run/run_0.png')
-            char_surf = pygame.transform.scale(char_surf, (100, 100))
-            char_rect = char_surf.get_rect(bottomright=(x, 250))
-            self.screen.blit(char_surf, char_rect)
+        # ПЕРСОНАЖИ В ОКНАХ
+        # characters = ['cock', 'alien', 'bird']
+        # for x in range(150, 451, 150):
+        #     char_surf = pygame.image.load(
+        # directory + '/sprites/' + characters[x // 150 - 1] + '/run/run_0.png')
+        # char_surf = pygame.transform.scale(char_surf, (100, 100))
+        # char_rect = char_surf.get_rect(bottomright=(x, 250))
+        # self.screen.blit(char_surf, char_rect)
 
-        #НАДПИСИ
+        # НАДПИСИ
         text_view = self.font.render("Выберите персонажа", 1, (100, 25, 100))
         text_x, text_y = 65, 60
         self.screen.blit(text_view, (text_x, text_y))
