@@ -12,6 +12,8 @@ class ChooseCharacter:
         self.font = pygame.font.Font(None, 50)
         self.choosed = 0
 
+        self.pushed = None
+
         textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='',
                                font=pygame.font.Font(None, 40))
         textbox.set_pos(670, 155)
@@ -33,16 +35,18 @@ class ChooseCharacter:
                             pygame.draw.rect(self.screen, pygame.Color('red'),
                                              self.chooseButtons[i], 2)
                             self.choosed = i
+                        elif self.back.collidepoint(event.pos):
+                            self.pushed = self.back
+                            running = False
 
             # BUTTON BACK
-            pygame.draw.rect(self.screen, (250, 175, 255),
-                             pygame.Rect(50, 515, 200, 35))
-            pygame.draw.rect(self.screen, (0, 0, 0),
-                             pygame.Rect(50, 515, 200, 35), 2)
+            pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(50, 515, 200, 35))
+            self.back = pygame.draw.rect(self.screen, (0, 0, 0), pygame.Rect(50, 515, 200, 35), 2)
             text_back = self.font.render("Назад", 1, (100, 25, 100))  # Надписи
             text_x, text_y = 150 - text_back.get_width() // 2, 515
             self.screen.blit(text_back, (text_x, text_y))
 
+            #ПОЛЕ ВВОДА НИКА
             pygame.draw.rect(self.screen, (250, 175, 255),
                              pygame.Rect(665, 150, self.inp_width, self.inp_height))
             pygame.draw.rect(self.screen, (0, 0, 0),
@@ -61,33 +65,26 @@ class ChooseCharacter:
         background_rect = background_surf.get_rect(bottomright=(1000, 600))
         self.screen.blit(background_surf, background_rect)
 
-        self.chooseButtons = []  # Выбор персонажа
-        self.chooseCharacters = []
+        # ОКНА ПЕРСОНАЖЕЙ
+        self.chooseButtons, self.chooseCharacters = [], []
         for y in range(150, 301, 150):
             for x in range(50, 351, 150):
                 pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(x, y, 100, 100))
                 self.chooseButtons.append(pygame.draw.rect(self.screen, pygame.Color('black'),
                                                            pygame.Rect(x, y, 100, 100), 2))
+        pygame.draw.rect(self.screen, pygame.Color('red'), self.chooseButtons[self.choosed], 2)
 
-        char_surf = pygame.image.load(
-            directory + '/sprites/alien/run/run_0.png')
-        char_surf = pygame.transform.scale(char_surf, (100, 100))
-        char_rect = char_surf.get_rect(bottomright=(150, 250))
-        self.screen.blit(char_surf, char_rect)
+        #ПЕРСОНАЖИ В ОКНАХ
+        characters = ['cock', 'alien', 'bird']
+        for x in range(150, 451, 150):
+            char_surf = pygame.image.load(
+                directory + '/sprites/' + characters[x // 150 - 1] + '/run/run_0.png')
+            char_surf = pygame.transform.scale(char_surf, (100, 100))
+            char_rect = char_surf.get_rect(bottomright=(x, 250))
+            self.screen.blit(char_surf, char_rect)
 
-        char_surf = pygame.image.load(
-            directory + '/sprites/cock/run/run_0.png')
-        char_surf = pygame.transform.scale(char_surf, (100, 100))
-        char_rect = char_surf.get_rect(bottomright=(300, 250))
-        self.screen.blit(char_surf, char_rect)
-
-        char_surf = pygame.image.load(
-            directory + '/sprites/bird/run/run_0.png')
-        char_surf = pygame.transform.scale(char_surf, (100, 100))
-        char_rect = char_surf.get_rect(bottomright=(450, 250))
-        self.screen.blit(char_surf, char_rect)
-
-        text_view = self.font.render("Выберите персонажа", 1, (100, 25, 100))  # Надписи
+        #НАДПИСИ
+        text_view = self.font.render("Выберите персонажа", 1, (100, 25, 100))
         text_x, text_y = 65, 60
         self.screen.blit(text_view, (text_x, text_y))
 

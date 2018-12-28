@@ -10,6 +10,8 @@ class MainMenu:
         self.winHeight = 600
         self.screen = pygame.display.set_mode((self.winWidth, self.winHeight))
 
+        self.pushed = None
+
         self.set_interface()
 
         running = True

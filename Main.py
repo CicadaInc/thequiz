@@ -6,9 +6,22 @@ mainWin = MainMenu()
 
 print(mainWin.pushed)
 
-if mainWin.pushed == pygame.Rect(375, 150, 251, 51): #Играть
-    ChooseCharacter()
-elif mainWin.pushed == pygame.Rect(375, 250, 251, 51): #Мультиплеер
-    ChooseCharacter()
-elif mainWin.pushed == pygame.Rect(375, 350, 251, 51): #Настройки
-    pass
+while True:
+    if mainWin.pushed == pygame.Rect(375, 150, 251, 51): #Играть
+        chooseChar = ChooseCharacter()
+        if chooseChar.pushed:
+            if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):
+                mainWin = MainMenu()
+        else:
+            break
+    elif mainWin.pushed == pygame.Rect(375, 250, 251, 51): #Мультиплеер
+        chooseChar = ChooseCharacter()
+        if chooseChar.pushed:
+            if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):
+                mainWin = MainMenu()
+        else:
+            break
+    elif mainWin.pushed == pygame.Rect(375, 350, 251, 51): #Настройки
+        pass
+    elif mainWin.pushed == pygame.Rect(375, 450, 251, 51):
+        break
