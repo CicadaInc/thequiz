@@ -93,8 +93,8 @@ STAY = pygame.image.load(directory + "/sprites/STAY.png")
 
 clock = pygame.time.Clock()
 
-x = 500
-y = 100
+x = 112
+y = 85
 width = 15
 height = 22
 
