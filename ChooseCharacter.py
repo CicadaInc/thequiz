@@ -13,7 +13,7 @@ class ChooseCharacter:
 
         textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='',
                                font=pygame.font.Font(None, 40))
-        textbox.set_pos(670, 105)
+        textbox.set_pos(670, 155)
 
         self.set_interface()
 
@@ -30,9 +30,9 @@ class ChooseCharacter:
                             print(i)
 
             pygame.draw.rect(self.screen, (250, 175, 255),
-                             pygame.Rect(665, 100, self.inp_width, self.inp_height))
+                             pygame.Rect(665, 150, self.inp_width, self.inp_height))
             pygame.draw.rect(self.screen, (0, 0, 0),
-                             pygame.Rect(665, 100, self.inp_width, self.inp_height), 2)
+                             pygame.Rect(665, 150, self.inp_width, self.inp_height), 2)
             textbox.update(events)
             textbox.draw(self.screen)
 

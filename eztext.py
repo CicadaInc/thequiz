@@ -1,3 +1,5 @@
+#From internet
+
 # input lib
 from pygame.locals import *
 import pygame, string
