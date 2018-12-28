@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f6881e46-bc70-480c-9033-47f860a33826" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/ANIMATION.py" beforeDir="false" afterPath="$PROJECT_DIR$/ANIMATION.py" afterDir="false" />
-    </list>
+    <list default="true" id="f6881e46-bc70-480c-9033-47f860a33826" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Animation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -136,6 +134,7 @@
         <option value="$PROJECT_DIR$/ChooseCharacter.py" />
         <option value="$PROJECT_DIR$/../pygame-tutorials/Game/Tutorial #3.py" />
         <option value="$PROJECT_DIR$/ANIMATION.py" />
+        <option value="$PROJECT_DIR$/Animation.py" />
       </list>
     </option>
   </component>
@@ -316,7 +315,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
@@ -419,8 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Animation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="179" column="21" selection-start-line="179" selection-start-column="21" selection-end-line="179" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
