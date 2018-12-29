@@ -1,5 +1,7 @@
 import os
+
 import pygame
+
 from field import field
 
 
@@ -9,7 +11,10 @@ class Multiplayer():
 
         pygame.init()
 
-        self.screen = pygame.display.set_mode((1000, 600))
+        self.screenwidth = 1000
+        self.screenheight = 600
+
+        self.screen = pygame.display.set_mode((self.screenwidth, self.screenheight))
         pygame.display.set_caption("Multiplayer")
 
         self.directory = os.getcwd()
@@ -39,23 +44,30 @@ class Multiplayer():
 
             keys = pygame.key.get_pressed()
 
-            if 0 < self.x < 1000 and 0 < self.y < 600:
+            if keys[pygame.K_LEFT]:
+                self.x -= self.speed
+                self.left, self.up = True, None
+            elif keys[pygame.K_RIGHT]:
+                self.x += self.speed
+                self.left, self.up = False, None
+            elif keys[pygame.K_UP]:
+                self.y -= self.speed
+                self.up, self.left = True, None
+            elif keys[pygame.K_DOWN]:
+                self.y += self.speed
+                self.up, self.left = False, None
+            else:
+                self.left, self.up = None, None
+                self.anim = 0
 
-                if keys[pygame.K_LEFT]:
-                    self.x -= self.speed
-                    self.left, self.up = True, None
-                elif keys[pygame.K_RIGHT]:
-                    self.x += self.speed
-                    self.left, self.up = False, None
-                elif keys[pygame.K_UP]:
-                    self.y -= self.speed
-                    self.up, self.left = True, None
-                elif keys[pygame.K_DOWN]:
-                    self.y += self.speed
-                    self.up, self.left = False, None
-                else:
-                    self.left, self.up = None, None
-                    self.anim = 0
+            if self.x < 0:
+                self.x = 0
+            if self.x > self.screenwidth:
+                self.x = 987
+            if self.y < 0:
+                self.y = 0
+            if self.y > self.screenheight:
+                self.y = 578
 
             self.draw()
             pygame.display.update()
@@ -86,13 +98,12 @@ class Multiplayer():
         self.screen.blit(background_surf, background_rect)
 
     def draw(self):
-        self.screen.fill((0, 0, 0))
         self.load_background()
 
         if self.anim + 1 >= 30:
             self.anim = 0
 
-        if (self.left is None and self.up is None) or (field[round(self.y // 25 + 0.9)][round(self.x // 25 + 0.9)] != 0):
+        if (self.left is None and self.up is None):
             self.screen.blit(self.STAY, (self.x, self.y))
             self.anim = 0
         else:

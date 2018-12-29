@@ -17,10 +17,13 @@ while True:
 
             elif chooseChar.pushed == pygame.Rect(750, 515, 201, 36):  # Старт
                 gameWin = Multiplayer()
-                if gameWin.pushed:
-                    pass
-                else:
-                    break
+                try:
+                    if gameWin.pushed:
+                        pass
+                    else:
+                        break
+                except Exception:
+                    print("Вернуться назад.")
         else:
             break
 
