@@ -1,9 +1,12 @@
 import os
 import pygame
+from field import field
 
 
 class Multiplayer():
     def __init__(self):
+        self.field = field
+
         pygame.init()
 
         self.screen = pygame.display.set_mode((1000, 600))
@@ -36,21 +39,23 @@ class Multiplayer():
 
             keys = pygame.key.get_pressed()
 
-            if keys[pygame.K_LEFT] and self.x > self.speed:
-                self.x -= self.speed
-                self.left, self.up = True, None
-            elif keys[pygame.K_RIGHT]:
-                self.x += self.speed
-                self.left, self.up = False, None
-            elif keys[pygame.K_UP]:
-                self.y -= self.speed
-                self.up, self.left = True, None
-            elif keys[pygame.K_DOWN]:
-                self.y += self.speed
-                self.up, self.left = False, None
-            else:
-                self.left, self.up = None, None
-                self.anim = 0
+            if 0 < self.x < 1000 and 0 < self.y < 600:
+
+                if keys[pygame.K_LEFT]:
+                    self.x -= self.speed
+                    self.left, self.up = True, None
+                elif keys[pygame.K_RIGHT]:
+                    self.x += self.speed
+                    self.left, self.up = False, None
+                elif keys[pygame.K_UP]:
+                    self.y -= self.speed
+                    self.up, self.left = True, None
+                elif keys[pygame.K_DOWN]:
+                    self.y += self.speed
+                    self.up, self.left = False, None
+                else:
+                    self.left, self.up = None, None
+                    self.anim = 0
 
             self.draw()
             pygame.display.update()
@@ -87,7 +92,7 @@ class Multiplayer():
         if self.anim + 1 >= 30:
             self.anim = 0
 
-        if self.left is None and self.up is None:
+        if (self.left is None and self.up is None) or (field[round(self.y // 25 + 0.9)][round(self.x // 25 + 0.9)] != 0):
             self.screen.blit(self.STAY, (self.x, self.y))
             self.anim = 0
         else:
