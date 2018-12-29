@@ -62,11 +62,11 @@ class Multiplayer():
 
             if self.x < 0:
                 self.x = 0
-            if self.x > self.screenwidth:
-                self.x = 987
+            if self.x >= 985:
+                self.x = 985
             if self.y < 0:
                 self.y = 0
-            if self.y > self.screenheight:
+            if self.y >= 578:
                 self.y = 578
 
             self.draw()
