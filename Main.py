@@ -2,6 +2,7 @@ from MainMenu import MainMenu
 from ChooseCharacter import ChooseCharacter
 from Multiplayer import Multiplayer
 import pygame
+import os
 
 mainWin = MainMenu()
 
@@ -17,10 +18,19 @@ while True:
 
             elif chooseChar.pushed == pygame.Rect(750, 515, 201, 36):  # Старт
                 gameWin = Multiplayer()
-                if gameWin.pushed:
-                    pass
-                else:
-                    break
+                try:
+                    if gameWin.pushed:
+                        pass
+                    else:
+                        break
+                except Exception:
+                    pygame.mixer.music.pause()
+                    # LOAD MUSIC
+                    directory = os.getcwd()
+                    pygame.mixer.music.load(directory + '/sounds/loading.mp3')
+                    pygame.mixer.music.play(-1)
+                    pygame.mixer.music.set_volume(0.3)
+                    print("Вернуться назад.")
         else:
             break
 
