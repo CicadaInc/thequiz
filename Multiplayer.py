@@ -10,7 +10,12 @@ class Multiplayer():
 
         self.directory = os.getcwd()
 
-        pygame.display.set_caption("Анимация персонажа")
+        # LOAD MUSIC
+        pygame.mixer.music.load(self.directory + '/sounds/fight.mp3')
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.3)
+
+        pygame.display.set_caption("Multiplayer")
 
         self.walkRight = [pygame.image.load(self.directory + "/sprites/RIGHT_1.png"),
                           pygame.image.load(self.directory + "/sprites/RIGHT_2.png"),
