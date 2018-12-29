@@ -13,7 +13,7 @@ class Multiplayer():
         # LOAD MUSIC
         pygame.mixer.music.load(self.directory + '/sounds/fight.mp3')
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(0.1)
 
         pygame.display.set_caption("Multiplayer")
 
@@ -133,14 +133,14 @@ class Multiplayer():
             elif keys[pygame.K_UP]:
                 self.y -= self.speed
                 self.up = True
-                self.right = True
+                self.right = False
                 self.left = False
                 self.down = False
 
             elif keys[pygame.K_DOWN]:
                 self.y += self.speed
                 self.down = True
-                self.right = True
+                self.right = False
                 self.left = False
                 self.up = False
 
