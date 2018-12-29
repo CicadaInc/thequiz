@@ -10,12 +10,15 @@ class MainMenu:
         self.winHeight = 600
         self.screen = pygame.display.set_mode((self.winWidth, self.winHeight))
 
+        self.pushed = None
+
         self.set_interface()
 
         running = True
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
+                    self.pushed = self.buttons[3]
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for i in range(len(self.buttons)):
@@ -33,6 +36,11 @@ class MainMenu:
         background_surf = pygame.transform.scale(background_surf, (1000, 600))
         background_rect = background_surf.get_rect(bottomright=(1000, 600))
         self.screen.blit(background_surf, background_rect)
+
+        # LOAD MUSIC
+        pygame.mixer.music.load(directory + '/sounds/loading.mp3')
+        pygame.mixer.music.play(-1)
+        pygame.mixer.music.set_volume(0.3)
 
         self.buttons, names = [], ['Играть', 'Мультиплеер', 'Настройки', 'Выход']
         font = pygame.font.Font(None, 50)
