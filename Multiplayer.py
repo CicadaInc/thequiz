@@ -29,7 +29,7 @@ class Multiplayer():
         self.left = None
         self.up = None
 
-        self.anim, self.speed = 0, 5
+        self.anim, self.speed = 0, 6
 
         run = True
         while run:
@@ -70,10 +70,12 @@ class Multiplayer():
                 self.x = 110
                 self.y = 100
             elif self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 3:
-                pass
+                self.speed = 3
             elif self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 1 or \
                     self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 2:
                 pass
+            else:
+                self.speed = 6
 
             self.draw()
             pygame.display.update()
