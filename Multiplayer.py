@@ -1,7 +1,6 @@
 import os
-
+import math
 import pygame
-
 from field import field
 
 
@@ -19,8 +18,6 @@ class Multiplayer():
 
         self.directory = os.getcwd()
 
-        self.load_music()
-
         self.walkRight, self.walkLeft, self.walkUp, self.walkDown = [], [], [], []
         self.load_animations()
 
@@ -32,7 +29,7 @@ class Multiplayer():
         self.left = None
         self.up = None
 
-        self.anim, self.speed = 0, 5
+        self.anim, self.speed = 0, 6
 
         run = True
         while run:
@@ -69,6 +66,17 @@ class Multiplayer():
             if self.y >= 578:
                 self.y = 578
 
+            if self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 4:
+                self.x = 110
+                self.y = 100
+            elif self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 3:
+                self.speed = 3
+            elif self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 1 or \
+                    self.field[math.ceil(self.y // 25)][math.ceil(self.x // 25)] == 2:
+                pass
+            else:
+                self.speed = 6
+
             self.draw()
             pygame.display.update()
 
@@ -83,12 +91,6 @@ class Multiplayer():
                 pygame.image.load(self.directory + "/sprites/DOWN_" + str(i) + '.png'))
 
         self.STAY = pygame.image.load(self.directory + "/sprites/STAY.png")
-
-    def load_music(self):
-        # LOAD MUSIC
-        pygame.mixer.music.load(self.directory + '/sounds/fight.mp3')
-        pygame.mixer.music.play(-1)
-        pygame.mixer.music.set_volume(0.1)
 
     def load_background(self):
         # LOAD BACKGROUND
