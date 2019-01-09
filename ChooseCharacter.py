@@ -35,12 +35,12 @@ class ChooseCharacter:
                             pygame.draw.rect(self.screen, pygame.Color('red'),
                                              self.chooseButtons[i], 2)
                             self.choosed = i
-                        elif self.back.collidepoint(event.pos):
-                            self.pushed = self.back
-                            running = False
-                        elif self.start.collidepoint(event.pos):
-                            self.pushed = self.start
-                            running = False
+                    if self.back.collidepoint(event.pos):
+                        self.pushed = self.back
+                        running = False
+                    elif self.start.collidepoint(event.pos):
+                        self.pushed = self.start
+                        running = False
 
             # ПОЛЕ ВВОДА НИКА
             pygame.draw.rect(self.screen, (250, 175, 255),

@@ -1,39 +1,43 @@
 from MainMenu import MainMenu
+from LevelMenu import LevelMenu
 from ChooseCharacter import ChooseCharacter
-from Multiplayer import Multiplayer
+from Game import Game
+from Multiplayer import play_multiplayer
 import pygame
 
 mainWin = MainMenu()
 
-print(mainWin.pushed)
-
 while True:
-    if mainWin.pushed == pygame.Rect(375, 150, 251, 51):  # Играть
+    if mainWin.pushed == mainWin.buttons[0]:  # Играть
         chooseChar = ChooseCharacter()
-        print(chooseChar.pushed)
-        if chooseChar.pushed:
-            if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):  # Назад
-                mainWin = MainMenu()
-
-            elif chooseChar.pushed == pygame.Rect(750, 515, 201, 36):  # Старт
-                gameWin = Multiplayer()
-                if gameWin.pushed:
-                    pass
-                else:
-                    break
+        if chooseChar.pushed == chooseChar.back:  # Назад
+            mainWin = MainMenu()
+        elif chooseChar.pushed == chooseChar.start:  # Старт
+            lvlWin = LevelMenu()
+            if lvlWin.pushed == lvlWin.start:
+                gameWin = play_multiplayer()  # Вместо этого должен быть запуск первого ур-ня
+                break
+            elif lvlWin.pushed == lvlWin.back:
+                chooseChar = ChooseCharacter()
+            else:
+                break
         else:
             break
 
-    elif mainWin.pushed == pygame.Rect(375, 250, 251, 51):  # Мультиплеер
+    elif mainWin.pushed == mainWin.buttons[1]:  # Мультиплеер
         chooseChar = ChooseCharacter()
-        print(chooseChar.pushed)
         if chooseChar.pushed:
-            if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):
+            if chooseChar.pushed == chooseChar.back:
                 mainWin = MainMenu()
+            elif chooseChar.pushed == chooseChar.start:
+                gameWin = play_multiplayer()
+                break
+            else:
+                break
         else:
             break
 
-    elif mainWin.pushed == pygame.Rect(375, 350, 251, 51):  # Настройки
+    elif mainWin.pushed == mainWin.buttons[2]:  # Настройки
         pass
-    elif mainWin.pushed == pygame.Rect(375, 450, 251, 51):  # Выход
+    elif mainWin.pushed == mainWin.buttons[3]:  # Выход
         break
