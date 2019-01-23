@@ -9,13 +9,13 @@ class ChooseCharacter:
 
         self.screen = pygame.display.set_mode((1000, 600))
         self.text = ''
-        self.font = pygame.font.Font(None, 50)
+        self.font = pygame.font.Font('sprites/freesansbold.ttf', 30)
         self.choosed = 0
 
         self.pushed = None
 
         textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='',
-                               font=pygame.font.Font(None, 40))
+                               font=pygame.font.Font('sprites/freesansbold.ttf', 30))
         textbox.set_pos(670, 155)
 
         self.set_interface()
@@ -56,7 +56,7 @@ class ChooseCharacter:
         directory = os.getcwd()
 
         # LOAD BACKGROUND
-        background_surf = pygame.image.load(directory + '/backgrounds/main.jpg')
+        background_surf = pygame.image.load(directory + '/backgrounds/quizFone.jpg')
         background_surf = pygame.transform.scale(background_surf, (1000, 600))
         background_rect = background_surf.get_rect(bottomright=(1000, 600))
         self.screen.blit(background_surf, background_rect)
@@ -69,12 +69,19 @@ class ChooseCharacter:
         self.screen.blit(text_back, (text_x, text_y))
 
         # ОКНА ПЕРСОНАЖЕЙ
-        self.chooseButtons, self.chooseCharacters = [], []
+        self.chooseButtons = []
+        i = 0
         for y in range(150, 301, 150):
             for x in range(50, 351, 150):
+                i += 1
                 pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(x, y, 100, 100))
                 self.chooseButtons.append(pygame.draw.rect(self.screen, pygame.Color('black'),
                                                            pygame.Rect(x, y, 100, 100), 2))
+
+                character = pygame.image.load('sprites/characters/' + str(i) + '.png')
+                character = pygame.transform.scale(character, (97, 97))
+                self.screen.blit(character, (x + 2, y + 2))
+
         pygame.draw.rect(self.screen, pygame.Color('red'), self.chooseButtons[self.choosed], 2)
 
         # КНОПКА СТАРТА
@@ -83,15 +90,6 @@ class ChooseCharacter:
         text_start = self.font.render("Старт", 1, (100, 25, 100))
         text_x, text_y = 850 - text_start.get_width() // 2, 550 - text_start.get_height()
         self.screen.blit(text_start, (text_x, text_y))
-
-        # ПЕРСОНАЖИ В ОКНАХ
-        # characters = ['cock', 'alien', 'bird']
-        # for x in range(150, 451, 150):
-        #     char_surf = pygame.image.load(
-        # directory + '/sprites/' + characters[x // 150 - 1] + '/run/run_0.png')
-        # char_surf = pygame.transform.scale(char_surf, (100, 100))
-        # char_rect = char_surf.get_rect(bottomright=(x, 250))
-        # self.screen.blit(char_surf, char_rect)
 
         # НАДПИСИ
         text_view = self.font.render("Выберите персонажа", 1, (100, 25, 100))
