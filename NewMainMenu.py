@@ -16,6 +16,9 @@ class NewMainMenu:
 
         self.set_interface()
 
+        pygame.mouse.set_visible(False)
+        surf = pygame.image.load('sprites/ForGUI/cursor1.png')
+
         push = False
         running = True
         while running:
@@ -39,6 +42,10 @@ class NewMainMenu:
                 running = False
 
             self.render()
+
+            pos = pygame.mouse.get_pos()
+            rect = surf.get_rect(topleft=pos)
+            self.screen.blit(surf, rect)
 
             pygame.display.flip()
 
