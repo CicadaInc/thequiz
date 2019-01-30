@@ -27,7 +27,9 @@ class NewMainMenu:
                     self.pushed = 'exit'
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    if self.coinRect.collidepoint(event.pos):
+                    x, y = event.pos
+                    x += 12
+                    if self.coinRect.collidepoint((x, y)):
                         push = True
                         x_, y_ = event.pos[0] - self.x, event.pos[1] - self.y
                 if event.type == pygame.MOUSEBUTTONUP:

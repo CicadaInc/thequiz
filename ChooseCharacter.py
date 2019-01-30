@@ -2,6 +2,7 @@ import pygame
 import eztext
 import os
 
+
 class ChooseCharacter:
     def __init__(self, choosed=0):
         pygame.init()
@@ -10,14 +11,6 @@ class ChooseCharacter:
         self.text = ''
         self.font = pygame.font.Font('sprites/freesansbold.ttf', 30)
         self.choosed = choosed
-        #
-        # self.character1 = character1
-        # self.character2 = character2
-        # self.character3 = character3
-        # self.character4 = character4
-        # self.character5 = character5
-        # self.character6 = character6
-        # self.character = 0
 
         self.pushed = None
 
@@ -42,25 +35,6 @@ class ChooseCharacter:
                             pygame.draw.rect(self.screen, pygame.Color('red'),
                                              self.chooseButtons[i], 2)
                             self.choosed = i
-                            # if i == 0:
-                            #     self.character1 = True
-                            # elif i == 1:
-                            #     self.character2 = True
-                            # elif i == 2:
-                            #     self.character3 = True
-                            # elif i == 3:
-                            #     self.character4 = True
-                            # elif i == 4:
-                            #     self.character5 = True
-                            # elif i == 5:
-                            #     self.character6 = True
-                            # else:
-                            #     self.character1 = False
-                            #     self.character2 = False
-                            #     self.character3 = False
-                            #     self.character4 = False
-                            #     self.character5 = False
-                            #     self.character6 = False
 
                         elif self.back.collidepoint(event.pos):
                             self.pushed = self.back
