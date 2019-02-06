@@ -9,11 +9,10 @@ mainWin0 = NewMainMenu()
 
 HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)', '3(Townfolk-Adult-M-006)',
           '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
-
 while True:
     if mainWin0.pushed == pygame.Rect(624, 392, 90, 40):
         mainWin = MainMenu()
-        if mainWin.pushed == pygame.Rect(75, 200, 251, 51):  # Продолжить
+        if mainWin.pushed == pygame.Rect(355, 205, 301, 81):  # Продолжить
             chooseChar = ChooseCharacter()
             if chooseChar.pushed:
                 if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):  # Назад
