@@ -12,9 +12,9 @@ HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)', '3(Townfolk-Adult-M-
 while True:
     if mainWin0.pushed == pygame.Rect(624, 392, 90, 40):
         mainWin = MainMenu()
-        if mainWin.pushed == pygame.Rect(355, 205, 301, 81):  # Продолжить
+        if mainWin.pushed == pygame.Rect(58, 125, 301, 81):  # Продолжить
             chooseChar = ChooseCharacter()
-            if chooseChar.pushed:
+            if chooseChar:
                 if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):  # Назад
                     continue
                 elif chooseChar.pushed == pygame.Rect(750, 515, 201, 36):  # Старт

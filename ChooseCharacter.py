@@ -6,7 +6,7 @@ import os
 class ChooseCharacter:
     def __init__(self, choosed=0):
         pygame.init()
-
+        pygame.mouse.set_visible(True)
         self.screen = pygame.display.set_mode((1000, 600))
         self.text = ''
         self.font = pygame.font.Font('sprites/freesansbold.ttf', 30)

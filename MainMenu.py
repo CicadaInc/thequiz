@@ -1,6 +1,9 @@
 import pygame
 import os
 
+def load_image(name):
+    image = pygame.image.load(name)
+    return image
 
 class MainMenu:
     def __init__(self):
@@ -12,6 +15,18 @@ class MainMenu:
 
         self.pushed = None
         self.y = 100
+
+        self.directory = os.getcwd()
+
+        # self.images = []
+        # for i in range(1, 30):
+        #     self.images.append(load_image(
+        #         self.directory + '/sprites/ForGUI/Blue buttons/level select blue button 300x80 hover/' +
+        #         'level select button blue 300x80 (' + str(i) + ').png'))
+        # выше спрайты
+        # self.index = 0
+        # self.image = self.images[self.index]
+        # self.rect = pygame.Rect(5, 5, 300, 80)
 
         pygame.mouse.set_visible(False)
 
@@ -62,7 +77,7 @@ class MainMenu:
 
         self.buttons = []
 
-        self.continue_btn = pygame.image.load('sprites/ForGUI/Blue buttons/level select blue button 300x80.png')
+        self.continue_btn = pygame.image.load('sprites/ForGUI/Blue buttons/Play blue button 300x80.png')
         self.continue_btn = pygame.transform.scale(self.continue_btn, (300, 80))
         self.continue_btn_Rect = self.continue_btn.get_rect(bottomright=(355, 205))
         self.screen.blit(self.continue_btn, self.continue_btn_Rect)
@@ -82,7 +97,7 @@ class MainMenu:
                              pygame.Rect(200, y + 50, 250, 200))
             self.buttons.append(pygame.draw.rect(self.screen, pygame.Color('black'),
                                                  pygame.Rect(58, y + 75, 300, 80), 2))
-
+        print(self.buttons)
 
 if __name__ == "__main__":
     MainMenu()
