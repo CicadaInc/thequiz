@@ -25,9 +25,9 @@ while True:
             else:
                 break
 
-        elif mainWin.pushed == pygame.Rect(75, 400, 251, 51):  # Настройки
+        elif mainWin.pushed == pygame.Rect(58, 225, 301, 81):  # Настройки
             pass
-        elif mainWin.pushed == pygame.Rect(75, 500, 251, 51):  # Выход
+        elif mainWin.pushed == pygame.Rect(58, 325, 301, 81):  # Выход
             break
     elif mainWin0.pushed == 'exit':
         break
