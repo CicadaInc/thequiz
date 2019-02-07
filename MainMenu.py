@@ -97,7 +97,7 @@ class MainMenu:
                              pygame.Rect(200, y + 50, 250, 200))
             self.buttons.append(pygame.draw.rect(self.screen, pygame.Color('black'),
                                                  pygame.Rect(58, y + 75, 300, 80), 2))
-        print(self.buttons)
+        # print(self.buttons)
 
 if __name__ == "__main__":
     MainMenu()
