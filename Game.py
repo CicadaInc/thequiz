@@ -23,10 +23,9 @@ class Game():
         self.clock = pygame.time.Clock()
 
         self.x, self.y = startx, starty
-
+        self.right = None
         self.left = None
         self.up = None
-
         self.pushed = None
 
         self.anim, self.speed = 0, 3
