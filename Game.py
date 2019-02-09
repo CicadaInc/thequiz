@@ -83,21 +83,21 @@ class Game():
             self.walkRight.append(
                 pygame.transform.scale(
                     pygame.image.load(self.directory + "/sprites/" + self.character + "/RIGHT_" + str(i) + '.png'),
-                    (16, 24)))
+                    (24, 32)))
             self.walkLeft.append(
                 pygame.transform.scale(
                     pygame.image.load(self.directory + "/sprites/" + self.character + "/LEFT_" + str(i) + '.png'),
-                    (16, 24)))
+                    (24, 32)))
             self.walkUp.append(
                 pygame.transform.scale(
                     pygame.image.load(self.directory + "/sprites/" + self.character + "/UP_" + str(i) + '.png'),
-                    (16, 24)))
+                    (24, 32)))
             self.walkDown.append(
                 pygame.transform.scale(
                     pygame.image.load(self.directory + "/sprites/" + self.character + "/DOWN_" + str(i) + '.png'),
-                    (16, 24)))
+                    (24, 32)))
         self.STAY = pygame.transform.scale(
-            pygame.image.load(self.directory + "/sprites/" + self.character + "/STAY" + '.png'), (16, 24))
+            pygame.image.load(self.directory + "/sprites/" + self.character + "/STAY" + '.png'), (24, 32))
 
     def load_background(self):
         # LOAD BACKGROUND
