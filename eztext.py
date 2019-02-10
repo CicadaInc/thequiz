@@ -18,10 +18,10 @@ class Config:
             if key not in assertions: raise ConfigError(key+' not expected as option')
 
 class Input:
-    """ A text input for pygame apps """
+    """ A text input for pg apps """
     def __init__(self, **options):
         """ Options: x, y, font, color, restricted, maxlength, prompt """
-        self.options = Config(options, ['x', '0'], ['y', '0'], ['font', 'pygame.font.Font(None, 32)'],
+        self.options = Config(options, ['x', '0'], ['y', '0'], ['font', 'pg.font.Font(None, 32)'],
                               ['color', '(0,0,0)'], ['restricted', '\'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&\\\'()*+,-./:;<=>?@[\]^_`{|}~\''],
                               ['maxlength', '-1'], ['prompt', '\'\''])
         self.x = self.options.x; self.y = self.options.y
