@@ -42,18 +42,20 @@ class Game():
                 if event.type == pygame.QUIT:
                     run = False
                     self.pushed = 'exit'
+            #ВЫХОД ЗА РАМКИ ЗАВЯЗАТЬ НА SELF.WINX, SELF.WINY
+            # if self.x < 0:
+            #     self.x = 0
+            # if self.x >= self.winw - 15:
+            #     self.x = self.winw - 21
+            # if self.y < 0:
+            #     self.y = 0
+            # if self.y >= self.winh - 22:
+            #     self.y = self.winh - 23
 
-            if self.x < 0:
-                self.x = 0
-            if self.x >= winw - 15:
-                self.x = winw - 21
-            if self.y < 0:
-                self.y = 0
-            if self.y >= winh - 22:
-                self.y = winh - 23
-            x, y = self.x + 24, self.y + 32
-            cell = field[ceil(y // 25)][ceil(x // 25)]
-            print(ceil(y // 25), ceil(x // 25))
+            x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
+            #cell = field[ceil(y // 36)][ceil(x // 36)]
+            cell = None
+            print(y // 36, x // 36)
             if cell == 4:
                 self.x, self.y = startx, starty
             elif cell == 3:
@@ -62,19 +64,19 @@ class Game():
                 self.speed = 4
 
             keys = pygame.key.get_pressed()
-            if keys[pygame.K_LEFT] and field[ceil(y // 25)][ceil((x - 8) // 25)] in [0, 3, 4]:
+            if keys[pygame.K_LEFT]: #and field[ceil(y // 25)][ceil((x - 24) // 14)] in [0, 3, 4]:
                 self.winx += self.speed
                 self.x -= self.speed
                 self.left, self.up = True, None
-            elif keys[pygame.K_RIGHT] and field[ceil(y // 25)][ceil((x + 8) // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_RIGHT]: #and field[ceil(y // 25)][ceil((x + 24) // 14)] in [0, 3, 4]:
                 self.winx -= self.speed
                 self.x += self.speed
                 self.left, self.up = False, None
-            elif keys[pygame.K_UP] and field[ceil((y - 11) // 25)][ceil(x // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_UP]: #and field[ceil((y - 32) // 25)][ceil(x // 14)] in [0, 3, 4]:
                 self.winy += self.speed
                 self.y -= self.speed
                 self.up, self.left = True, None
-            elif keys[pygame.K_DOWN] and field[ceil((y + 11) // 25)][ceil(x // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_DOWN]: #and field[ceil((y + 32) // 25)][ceil(x // 14)] in [0, 3, 4]:
                 self.winy -= self.speed
                 self.y += self.speed
                 self.up, self.left = False, None
