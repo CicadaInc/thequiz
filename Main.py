@@ -19,7 +19,7 @@ while True:
                     continue
                 elif chooseChar.pushed == pygame.Rect(750, 515, 200, 35):  # Старт
                     hero = HEROES[chooseChar.choosed]
-                    gameWin = Game(1000, 600, 'The Quiz', 50, 100, "MainLocation.png", field, hero)
+                    gameWin = Game('The Quiz', 468, 210, "MainLocation.png", field, hero, 2300, 1550)
                     if gameWin.pushed == 'exit':
                         break
                 elif chooseChar.pushed == 'exit':
