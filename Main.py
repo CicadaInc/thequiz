@@ -2,7 +2,6 @@ from MainMenu import MainMenu
 from NewMainMenu import NewMainMenu
 from ChooseCharacter import ChooseCharacter
 from Game import Game
-from field import field
 import pygame
 
 mainWin0 = NewMainMenu()
