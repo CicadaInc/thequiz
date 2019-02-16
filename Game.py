@@ -1,14 +1,15 @@
 import os
 import pygame
 from create_field import field
+from Pause import Pause
 
 
 class Game:
-    def __init__(self, character):
+    def __init__(self, character, name):
         pygame.init()
 
         self.winw, self.winh = 1000, 600
-        self.winx, self.winy = 2300, 1550
+        self.winx, self.winy = 2810, 1760
 
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
@@ -27,28 +28,38 @@ class Game:
         self.right = None
         self.up = None
 
+        font = pygame.font.SysFont('Trebuchet MS', 12)
+        font.set_bold(True)
+        self.nick = font.render(name, False, pygame.Color('blue'))
+
         self.k = 0
 
         self.pushed = None
 
-        self.anim, self.speed = 0, 3
+        self.anim = 0
 
         self.load_background()
 
-        run = True
-        while run:
-            self.clock.tick(30)
+        self.speed = 15
+
+        running = True
+        while running:
+            self.clock.tick(60)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    run = False
+                    running = False
                     self.pushed = 'exit'
+                if event.type == pygame.KEYDOWN:
+                    if event.key == 27:
+                        p = Pause(self.screen, self)
+                        if p.pushed == p.quit:
+                            self.pushed = 'exit_main'
+                            running = False
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
-            self.speed = 4
-            # cell = self.level[y // 36][x // 36]
-            # print(self.level[y // 36][((x + 24) // 36)])
             print(y // 36, x // 36)
+            print(self.winx, self.winy)
 
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT] and self.level[y // 36][((x + self.speed) // 36)] in [0, 3, 4]:
@@ -69,18 +80,15 @@ class Game:
 
             if self.winx > 4236:
                 self.winx = 4236
-            if self.winx < 500:
-                self.winx = 500
-            if self.winy > 2472:
-                self.winy = 2472
-            if self.winy < 300:
-                self.winy = 300
-            if self.winx > 4204:
-                self.winx = 4204
-            print('self.winx: {}; self.winy: {}'.format(self.winx ,self.winy))
+            if self.winx < 1000:
+                self.winx = 1000
+            if self.winy > 2600:
+                self.winy = 2600
+            if self.winy < 605:
+                self.winy = 605
 
             self.render()
-            pygame.display.update()
+            pygame.display.flip()
 
     def load_animations(self):
         for i in range(1, 4):
@@ -116,6 +124,9 @@ class Game:
         self.background_rect = self.background_surf.get_rect(bottomright=(self.winx, self.winy))
         self.screen.blit(self.background_surf, self.background_rect)
 
+        self.screen.blit(self.nick, (self.startx - self.nick.get_width() // 2 + 24,
+                                     self.starty - self.nick.get_height() // 2))
+
         if self.anim + 1 >= 30:
             self.anim = 0
 
@@ -143,7 +154,7 @@ if __name__ == "__main__":
                   '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 
         hero = HEROES[1]
-        Game(hero)
+        Game(hero, "SuperHero")
 
 
     test()

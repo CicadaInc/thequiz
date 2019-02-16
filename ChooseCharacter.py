@@ -34,6 +34,8 @@ class ChooseCharacter:
                             running = False
                         elif self.start.collidepoint(event.pos):
                             self.pushed = self.start
+                            self.textbox.update(self.events)
+                            self.nick = self.textbox.value
                             running = False
 
             self.render()
@@ -53,8 +55,8 @@ class ChooseCharacter:
         self.textbox.draw(self.screen)
 
         # НАЗАД
-        pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(50, 515, 200, 35))
-        pygame.draw.rect(self.screen, (0, 0, 0), pygame.Rect(50, 515, 200, 35), 2)
+        pygame.draw.rect(self.screen, (250, 175, 255), self.back)
+        pygame.draw.rect(self.screen, (0, 0, 0), self.back, 2)
         self.screen.blit(self.text_back, (self.text_x_1, self.text_y_1))
 
         # ПЕРСОНАЖИ
@@ -71,8 +73,8 @@ class ChooseCharacter:
                 self.screen.blit(character, (x + 2, y + 2))
 
         # СТАРТ
-        pygame.draw.rect(self.screen, (250, 175, 255), pygame.Rect(750, 515, 200, 35))
-        pygame.draw.rect(self.screen, (0, 0, 0), pygame.Rect(750, 515, 200, 35), 2)
+        pygame.draw.rect(self.screen, (250, 175, 255), self.start)
+        pygame.draw.rect(self.screen, (0, 0, 0), self.start, 2)
 
         # НАДПИСИ
         self.screen.blit(self.text_start, (self.text_x_2, self.text_y_2))
@@ -131,8 +133,4 @@ class ChooseCharacter:
 
 
 if __name__ == "__main__":
-    def start():
-        ChooseCharacter()
-
-
-    start()
+    ChooseCharacter()
