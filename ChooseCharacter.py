@@ -34,6 +34,8 @@ class ChooseCharacter:
                             running = False
                         elif self.start.collidepoint(event.pos):
                             self.pushed = self.start
+                            self.textbox.update(self.events)
+                            self.nick = self.textbox.value
                             running = False
 
             self.render()

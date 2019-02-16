@@ -4,7 +4,7 @@ from create_field import field
 
 
 class Game:
-    def __init__(self, character):
+    def __init__(self, character, name):
         pygame.init()
 
         self.winw, self.winh = 1000, 600
@@ -27,6 +27,10 @@ class Game:
         self.right = None
         self.up = None
 
+        font = pygame.font.SysFont('Trebuchet MS', 12)
+        font.set_bold(True)
+        self.nick = font.render(name, False, pygame.Color('blue'))
+
         self.k = 0
 
         self.pushed = None
@@ -46,8 +50,6 @@ class Game:
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
             self.speed = 4
-            cell = self.level[y // 36][x // 36]
-            print(self.level[y // 36][((x + 24) // 36)])
             print(y // 36, x // 36)
 
             keys = pygame.key.get_pressed()
@@ -113,6 +115,9 @@ class Game:
         self.background_rect = self.background_surf.get_rect(bottomright=(self.winx, self.winy))
         self.screen.blit(self.background_surf, self.background_rect)
 
+        self.screen.blit(self.nick, (self.startx - self.nick.get_width() // 2 + 24,
+                                     self.starty - self.nick.get_height() // 2))
+
         if self.anim + 1 >= 30:
             self.anim = 0
 
@@ -140,7 +145,7 @@ if __name__ == "__main__":
                   '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 
         hero = HEROES[1]
-        Game(hero)
+        Game(hero, "SuperHero")
 
 
     test()
