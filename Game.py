@@ -1,6 +1,7 @@
 import os
 import pygame
 from create_field import field
+from Pause import Pause
 
 
 class Game:
@@ -39,14 +40,21 @@ class Game:
 
         self.load_background()
 
-        run = True
-        while run:
+        running = True
+        while running:
             self.clock.tick(30)
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    run = False
+                    running = False
                     self.pushed = 'exit'
+                if event.type == pygame.KEYDOWN:
+                    if event.key == 27:
+                        p = Pause(self.screen)
+                        if p.pushed == p.quit:
+                            self.pushed = 'exit_main'
+                            running = False
+                        pygame.mouse.set_visible(False)
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
             self.speed = 4

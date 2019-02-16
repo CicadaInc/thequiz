@@ -21,6 +21,8 @@ while True:
                     gameWin = Game(hero, chooseChar.nick)
                     if gameWin.pushed == 'exit':
                         break
+                    elif gameWin.pushed == 'exit_main':
+                        continue
                 elif chooseChar.pushed == 'exit':
                     break
             else:
