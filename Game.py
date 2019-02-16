@@ -57,7 +57,7 @@ class Game:
                         pygame.mouse.set_visible(False)
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
-            self.speed = 4
+            self.speed = 5
             print(y // 36, x // 36)
 
             keys = pygame.key.get_pressed()
