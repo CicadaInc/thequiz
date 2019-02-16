@@ -77,7 +77,7 @@ class Game:
                 self.winy = 300
             if self.winx > 4204:
                 self.winx = 4204
-            print('self.winx: {}; self.winy: {}'.format(self.winx,self.winy))
+            print('self.winx: {}; self.winy: {}'.format(self.winx ,self.winy))
 
             self.render()
             pygame.display.update()
