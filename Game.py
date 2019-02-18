@@ -9,7 +9,7 @@ class Game:
         pygame.init()
 
         self.winw, self.winh = 1000, 600
-        self.winx, self.winy = 2300, 1550
+        self.winx, self.winy = 2852, 1805
 
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
@@ -36,11 +36,9 @@ class Game:
 
         self.pushed = None
 
-        self.anim, self.speed = 0, 3
+        self.anim, self.speed = 0, 2
 
         self.load_background()
-
-        self.speed = 3
 
         running = True
         while running:
@@ -59,32 +57,33 @@ class Game:
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
             print(y // 36, x // 36)
+            print(self.winx, self.winy)
 
             keys = pygame.key.get_pressed()
-            if keys[pygame.K_LEFT] and self.level[y // 36][((x + self.speed) // 36)] in [0, 3, 4]:
+            if keys[pygame.K_LEFT]:
                 self.winx += self.speed
                 self.left, self.up = True, None
-            elif keys[pygame.K_RIGHT] and self.level[y // 36][(x - self.speed - 24) // 36] in [0, 3, 4]:
+            elif keys[pygame.K_RIGHT]:
                 self.winx -= self.speed
                 self.left, self.up = False, None
-            elif keys[pygame.K_UP] and self.level[(y + self.speed) // 36][(x - 12) // 36] in [0, 3, 4]:
+            elif keys[pygame.K_UP]:
                 self.winy += self.speed
                 self.up, self.left = True, None
-            elif keys[pygame.K_DOWN] and self.level[(y - self.speed) // 36][(x - 12) // 36] in [0, 3, 4]:
+            elif keys[pygame.K_DOWN]:
                 self.winy -= self.speed
                 self.up, self.left = False, None
             else:
                 self.left, self.up = None, None
                 self.anim = 0
 
-            if self.winx > 4236:
-                self.winx = 4236
-            if self.winx < 500:
-                self.winx = 500
-            if self.winy > 2472:
-                self.winy = 2472
-            if self.winy < 300:
-                self.winy = 300
+            if self.winx > 4736:
+                self.winx = 4736
+            if self.winx < 1001:
+                self.winx = 1001
+            if self.winy > 2803:
+                self.winy = 2803
+            if self.winy < 600:
+                self.winy = 600
 
             self.render()
             pygame.display.flip()
@@ -133,7 +132,7 @@ class Game:
             self.screen.blit(self.STAY, (self.startx, self.starty))
             self.anim = 0
         else:
-            if self.k == 1:
+            if int(self.k) == 1:
                 self.anim += 1
                 self.k = 0
             if not self.left and not (self.left is None):
@@ -144,7 +143,7 @@ class Game:
                 self.screen.blit(self.walkUp[self.anim % 3], (self.startx, self.starty))
             elif not self.up:
                 self.screen.blit(self.walkDown[self.anim % 3], (self.startx, self.starty))
-            self.k += 0.25
+            self.k += 0.15
 
 
 if __name__ == "__main__":

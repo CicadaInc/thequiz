@@ -70,15 +70,10 @@ class MainMenu:
         self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
         self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
 
-        # LOAD MUSIC
-        # pygame.mixer.music.load(directory + '/sounds/loading.mp3')
-        # pygame.mixer.music.play(-1)
-        # pygame.mixer.music.set_volume(0.3)
-
         self.continue_btn = load_image('sprites/ForGUI/Blue buttons/Play blue button 300x80.png')
         self.continue_btn_Rect = self.continue_btn.get_rect(bottomright=(355, 205))
 
-        self.options_btn = load_image('sprites/ForGUI/Blue buttons/options blue button 300x80.png')
+        self.options_btn = load_image('sprites/ForGUI/Blue buttons/more blue button 300x80.png')
         self.options_btn_Rect = self.options_btn.get_rect(bottomright=(355, 305))
 
         self.quit_btn = load_image('sprites/ForGUI/Blue buttons/Quit blue button 300x80.png')
@@ -97,8 +92,8 @@ class MainMenu:
         self.images.append([])
         for i in range(1, 31):
             self.images[-1].append(load_image(
-                self.directory + '/sprites/ForGUI\Blue buttons\options blue button 300x80 hover/' +
-                'option blue button 300x80 (' + str(i) + ').png'))
+                self.directory + '/sprites/ForGUI\Blue buttons\more blue button 300x80 hover/' +
+                'more blue button 300x80 (' + str(i) + ').png'))
 
         self.images.append([])
         for i in range(1, 31):

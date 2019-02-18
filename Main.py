@@ -2,6 +2,7 @@ from MainMenu import MainMenu
 from NewMainMenu import NewMainMenu
 from ChooseCharacter import ChooseCharacter
 from Game import Game
+from MoreInformation import Information
 import pygame
 
 mainWin0 = NewMainMenu()
@@ -28,8 +29,8 @@ while True:
             else:
                 break
 
-        elif mainWin.pushed == pygame.Rect(58, 225, 300, 80):  # Настройки
-            pass
+        elif mainWin.pushed == pygame.Rect(55, 225, 300, 80):  # Настройки
+            Information()
         elif mainWin.pushed == pygame.Rect(55, 325, 300, 80):  # Выход
             break
     elif mainWin0.pushed == 'exit':
