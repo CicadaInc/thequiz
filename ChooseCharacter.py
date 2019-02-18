@@ -11,7 +11,7 @@ class ChooseCharacter:
 
         self.screen = pygame.display.set_mode((1000, 600))
 
-        self.font = pygame.font.Font('sprites/freesansbold.ttf', 30)
+        self.font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 
         self.choosed = choosed
         self.pushed = None

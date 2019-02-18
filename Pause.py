@@ -15,7 +15,7 @@ class Pause:
 
         self.pushed = None
 
-        self.font = pygame.font.Font('sprites/freesansbold.ttf', 25)
+        self.font = pygame.font.Font('fonts/freesansbold.ttf', 25)
 
         self.set_interface()
 
