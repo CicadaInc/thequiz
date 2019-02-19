@@ -48,9 +48,9 @@ class ChooseCharacter:
 
         # ПОЛЕ ВВОДА НИКА
         pygame.draw.rect(self.screen, (250, 175, 255),
-                         pygame.Rect(665, 150, 200, 43))
+                         pygame.Rect(640, 150, 250, 43))
         pygame.draw.rect(self.screen, (0, 0, 0),
-                         pygame.Rect(665, 150, 200, 43), 2)
+                         pygame.Rect(640, 150, 250, 43), 2)
         self.textbox.update(self.events)
         self.textbox.draw(self.screen)
 
@@ -100,7 +100,7 @@ class ChooseCharacter:
 
         # ПОЛЕ ДЛЯ ВВОДА НИКА
         self.textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='', font=self.font)
-        self.textbox.set_pos(670, 155)
+        self.textbox.set_pos(655, 155)
 
         # BUTTON BACK
         self.back = pygame.Rect(50, 515, 200, 35)

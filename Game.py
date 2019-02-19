@@ -2,6 +2,8 @@ import os
 import pygame
 from create_field import field
 from Pause import Pause
+import Dialogue
+import Quest1
 
 
 class Game:
@@ -17,6 +19,8 @@ class Game:
         self.level = field
         self.directory = os.getcwd()
 
+        self.solved1, self.solved2, self.solved3 = False, False, False
+
         self.character = character
 
         self.walkRight, self.walkLeft, self.walkUp, self.walkDown = [], [], [], []
@@ -28,17 +32,20 @@ class Game:
         self.right = None
         self.up = None
 
+        self.oldMan = pygame.transform.scale(pygame.image.load("sprites/OldMan.png"), (48, 64))
+
+        self.font = pygame.font.Font('fonts/freesansbold.ttf', 17)
+
         font = pygame.font.SysFont('Trebuchet MS', 12)
         font.set_bold(True)
         self.nick = font.render(name, False, pygame.Color('blue'))
+        self.nameNpc1 = font.render("Brain Fuck", 1, pygame.Color('blue'))
 
         self.k = 0
-
         self.pushed = None
+        self.anim, self.speed = 0, 10
 
-        self.anim, self.speed = 0, 2
-
-        self.load_background()
+        self.set_interface()
 
         running = True
         while running:
@@ -54,10 +61,43 @@ class Game:
                         if p.pushed == p.quit:
                             self.pushed = 'exit_main'
                             running = False
+                    elif event.key == 101:
+                        if abs(self.npc1_x - 470) < 35 and abs(self.npc1_y - 200) < 35:
+                            if not self.solved1:
+                                phrases = Dialogue.create_dialogue1()
+                            else:
+                                phrases = Dialogue.create_dialogue5()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                running = False
+
+                        elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 and not self.solved1:
+                            phrases = Dialogue.create_dialogue2()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                self.pushed = 'exit'
+                                running = False
+                            else:
+                                phrases = Quest1.create_dialogue1()
+                                di = Quest1.Quest(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    self.pushed = 'exit'
+                                    running = False
+                                elif di.pushed == 'valid':
+                                    self.solved1 = True
+                                    phrases = Dialogue.create_dialogue3()
+                                elif di.pushed == 'wrong':
+                                    phrases = Dialogue.create_dialogue4()
+                                if not (di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                    if di.pushed == 'exit':
+                                        self.pushed = 'exit'
+                                        running = False
+                        print(self.winx, self.winy)
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
-            print(y // 36, x // 36)
-            print(self.winx, self.winy)
+            #print(y // 36, x // 36)
+            #print(self.winx, self.winy)
 
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT]:
@@ -109,12 +149,16 @@ class Game:
         self.STAY = pygame.transform.scale(
             pygame.image.load(self.directory + "/sprites/" + self.character + "/STAY" + '.png'), (48, 64))
 
-    def load_background(self):
+    def set_interface(self):
         # LOAD BACKGROUND
         self.background_surf = pygame.image.load(self.directory + '/levels/MainLocation.png')
-        # self.background_surf = pygame.transform.scale(self.background_surf, (self.winw, self.winh))
         self.background_rect = self.background_surf.get_rect(bottomright=(self.winx, self.winy))
         self.screen.blit(self.background_surf, self.background_rect)
+
+        self.controls1 = self.font.render("esc - Пауза", 1, (0, 0, 0))
+        self.controls1_x, self.controls1_y = 800, 520
+        self.controls2 = self.font.render("e - Взаимодействовать", 1, (0, 0, 0))
+        self.controls2_x, self.controls2_y = 800, 540
 
     def render(self):
         self.screen.fill((0, 0, 0))
@@ -122,8 +166,17 @@ class Game:
         self.background_rect = self.background_surf.get_rect(bottomright=(self.winx, self.winy))
         self.screen.blit(self.background_surf, self.background_rect)
 
+        self.npc1_x, self.npc1_y = -1730 + self.winx, -2350 + self.winy
+        #print(self.npc1_x, self.npc1_y)
+        self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
+
+        self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
+
         self.screen.blit(self.nick, (self.startx - self.nick.get_width() // 2 + 24,
-                                     self.starty - self.nick.get_height() // 2))
+                                     self.starty - self.nick.get_height() // 2 - 5))
+
+        self.screen.blit(self.controls1, (self.controls1_x, self.controls1_y))
+        self.screen.blit(self.controls2, (self.controls2_x, self.controls2_y))
 
         if self.anim + 1 >= 30:
             self.anim = 0
