@@ -72,7 +72,7 @@ class NewMainMenu:
         # LOAD MUSIC
         pygame.mixer.music.load(directory + '/sounds/loading.mp3')
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(1)
 
         font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 

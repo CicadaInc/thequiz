@@ -17,6 +17,8 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
 
+        self.michael = False
+        self.musicStatus = False
         self.keysEggs = ''
         self.level = field
         self.directory = os.getcwd()
@@ -35,6 +37,7 @@ class Game:
         self.up = None
 
         self.oldMan = pygame.transform.scale(pygame.image.load("sprites/OldMan.png"), (48, 64))
+        # self.mario = pygame.transform.scale(pygame.image.load("sprites/guido.png"), (34, 56))
 
         self.font = pygame.font.Font('fonts/freesansbold.ttf', 17)
 
@@ -105,6 +108,60 @@ class Game:
                         self.keysEggs += 'l'
                     elif event.key == 115:
                         self.keysEggs += 's'
+                    elif event.key == 98:
+                        self.keysEggs += 'b'
+                    elif event.key == 99:
+                        self.keysEggs += 'c'
+                    elif event.key == 100:
+                        self.keysEggs += 'd'
+                    elif event.key == 101:
+                        self.keysEggs += 'e'
+                    elif event.key == 102:
+                        self.keysEggs += 'f'
+                    elif event.key == 103:
+                        self.keysEggs += 'g'
+                    elif event.key == 104:
+                        self.keysEggs += 'h'
+                    elif event.key == 105:
+                        self.keysEggs += 'i'
+                    elif event.key == 106:
+                        self.keysEggs += 'j'
+                    elif event.key == 107:
+                        self.keysEggs += 'k'
+                    elif event.key == 108:
+                        self.keysEggs += 'l'
+                    elif event.key == 109:
+                        self.keysEggs += 'm'
+                    elif event.key == 110:
+                        self.keysEggs += 'n'
+                    elif event.key == 111:
+                        self.keysEggs += 'o'
+                    elif event.key == 112:
+                        self.keysEggs += 'p'
+                    elif event.key == 114:
+                        self.keysEggs += 'r'
+                    elif event.key == 115:
+                        self.keysEggs += 's'
+                    elif event.key == 116:
+                        self.keysEggs += 't'
+                    elif event.key == 117:
+                        self.keysEggs += 'u'
+                    elif event.key == 118:
+                        self.keysEggs += 'v'
+                    elif event.key == 119:
+                        self.keysEggs += 'w'
+                    elif event.key == 120:
+                        self.keysEggs += 'x'
+                    elif event.key == 121:
+                        self.keysEggs += 'y'
+                    elif event.key == 122:
+                        self.keysEggs += 'z'
+                    elif event.key == 113:
+                        self.keysEggs += 'q'
+                        if self.michael is False:
+                            self.michael = True
+                        else:
+                            self.michael = False
 
                     if 'falls' in self.keysEggs or 'gravity' in self.keysEggs:
                         print('GRAVITY FALLS')
@@ -121,12 +178,12 @@ class Game:
 
                         pygame.mixer.music.load(self.directory + '/sounds/gravity.mp3')
                         pygame.mixer.music.play(-1)
-                        pygame.mixer.music.set_volume(0.5)
+                        pygame.mixer.music.set_volume(1)
 
                         start = time.monotonic()
                         end = time.monotonic()
                         stop = False
-                        while end - start <= 10:
+                        while end - start <= 120:
                             for event in pygame.event.get():
                                 if event.type == pygame.KEYDOWN:
                                     if event.key == 27:
@@ -142,37 +199,99 @@ class Game:
 
                         pygame.mixer.music.stop()
 
+                        if 'michael' in self.keysEggs or 'jackson' in self.keysEggs:
+                            print('GRAVITY FALLS')
+
+                            # VIEW EGG
+                            surf = pygame.image.load(self.directory + '/levels/px1.png')
+                            rect = surf.get_rect(bottomright=(1000, 600))
+                            self.screen.blit(surf, rect)
+                            pygame.display.flip()
+
+                            # self.background_surf = pygame.image.load(self.directory + '/levels/px1.png')
+                            # self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
+                            # self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+
+                            pygame.mixer.music.load(self.directory + '/sounds/gravity.mp3')
+                            pygame.mixer.music.play(-1)
+                            pygame.mixer.music.set_volume(1)
+
+                            start = time.monotonic()
+                            end = time.monotonic()
+                            stop = False
+                            while end - start <= 120:
+                                for event in pygame.event.get():
+                                    if event.type == pygame.KEYDOWN:
+                                        if event.key == 27:
+                                            stop = True
+                                            break
+                                    if event.type == pygame.QUIT:
+                                        stop = True
+                                        self.pushed = 'exit'
+                                        running = False
+                                if stop:
+                                    break
+                                end = time.monotonic()
+
+                            pygame.mixer.music.stop()
+
                         self.keysEggs = ''
 
-            x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
-            print(y // 36, x // 36)
-            # print(self.winx, self.winy)
+            x, y = (self.winx - 525) - self.winw // 2, (self.winy - 250) - self.winh // 2
+            # print(y // 36, x // 36)
+
+            if self.musicStatus is False:
+                if (y // 36) == 61 and (x // 36) == 34:
+                    self.musicStatus = True
+
+                    pygame.mixer.music.stop()
+                    pygame.mixer.music.load(self.directory + '/sounds/fight.mp3')
+                    pygame.mixer.music.play(0)
+                    pygame.mixer.music.set_volume(1)
 
             keys = pygame.key.get_pressed()
-            if keys[pygame.K_LEFT]:
-                self.winx += self.speed
-                self.left, self.up = True, None
-            elif keys[pygame.K_RIGHT]:
-                self.winx -= self.speed
-                self.left, self.up = False, None
-            elif keys[pygame.K_UP]:
-                self.winy += self.speed
-                self.up, self.left = True, None
-            elif keys[pygame.K_DOWN]:
-                self.winy -= self.speed
-                self.up, self.left = False, None
-            else:
-                self.left, self.up = None, None
-                self.anim = 0
 
-            if self.winx > 4736:
-                self.winx = 4736
-            if self.winx < 1001:
-                self.winx = 1001
-            if self.winy > 2803:
-                self.winy = 2803
-            if self.winy < 600:
-                self.winy = 600
+            if self.michael is False:
+                if keys[pygame.K_LEFT]:
+                    self.winx += self.speed
+                    self.left, self.up = True, None
+                elif keys[pygame.K_RIGHT]:
+                    self.winx -= self.speed
+                    self.left, self.up = False, None
+                elif keys[pygame.K_UP]:
+                    self.winy += self.speed
+                    self.up, self.left = True, None
+                elif keys[pygame.K_DOWN]:
+                    self.winy -= self.speed
+                    self.up, self.left = False, None
+                else:
+                    self.left, self.up = None, None
+                    self.anim = 0
+            else:
+                if keys[pygame.K_LEFT]:
+                    self.winx -= self.speed
+                    self.left, self.up = True, None
+                elif keys[pygame.K_RIGHT]:
+                    self.winx += self.speed
+                    self.left, self.up = False, None
+                elif keys[pygame.K_UP]:
+                    self.winy += self.speed
+                    self.up, self.left = True, None
+                elif keys[pygame.K_DOWN]:
+                    self.winy -= self.speed
+                    self.up, self.left = False, None
+                else:
+                    self.left, self.up = None, None
+                    self.anim = 0
+
+            if self.winx > 4720:
+                self.winx = 4720
+            if self.winx < 1050:
+                self.winx = 1050
+            if self.winy > 2743:
+                self.winy = 2743
+            if self.winy < 580:
+                self.winy = 580
 
             self.render()
 
@@ -219,6 +338,7 @@ class Game:
         self.npc1_x, self.npc1_y = -1730 + self.winx, -2350 + self.winy
         # print(self.npc1_x, self.npc1_y)
         self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
+        # self.screen.blit(self.mario, (150, 150))
 
         self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
 
@@ -254,7 +374,7 @@ if __name__ == "__main__":
         HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)', '3(Townfolk-Adult-M-006)',
                   '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 
-        hero = HEROES[1]
+        hero = HEROES[0]
         Game(hero, "SuperHero")
 
 
