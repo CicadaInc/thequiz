@@ -68,6 +68,7 @@ class Game:
                             self.pushed = 'exit_main'
                             running = False
                     elif event.key == 101:
+                        self.keysEggs += 'e'
                         if abs(self.npc1_x - 470) < 35 and abs(self.npc1_y - 200) < 35:
                             if not self.solved1:
                                 phrases = Dialogue.create_dialogue1()
@@ -114,8 +115,6 @@ class Game:
                         self.keysEggs += 'c'
                     elif event.key == 100:
                         self.keysEggs += 'd'
-                    elif event.key == 101:
-                        self.keysEggs += 'e'
                     elif event.key == 102:
                         self.keysEggs += 'f'
                     elif event.key == 103:
@@ -199,41 +198,43 @@ class Game:
 
                         pygame.mixer.music.stop()
 
-                        if 'michael' in self.keysEggs or 'jackson' in self.keysEggs:
-                            print('GRAVITY FALLS')
+                        self.keysEggs = ''
 
-                            # VIEW EGG
-                            surf = pygame.image.load(self.directory + '/levels/px1.png')
-                            rect = surf.get_rect(bottomright=(1000, 600))
-                            self.screen.blit(surf, rect)
-                            pygame.display.flip()
+                    if 'michael' in self.keysEggs or 'jackson' in self.keysEggs:
+                        print('GRAVITY FALLS')
 
-                            # self.background_surf = pygame.image.load(self.directory + '/levels/px1.png')
-                            # self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
-                            # self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+                        # VIEW EGG
+                        surf = pygame.image.load(self.directory + '/levels/px2.jpg')
+                        rect = surf.get_rect(bottomright=(1000, 600))
+                        self.screen.blit(surf, rect)
+                        pygame.display.flip()
 
-                            pygame.mixer.music.load(self.directory + '/sounds/gravity.mp3')
-                            pygame.mixer.music.play(-1)
-                            pygame.mixer.music.set_volume(1)
+                        # self.background_surf = pygame.image.load(self.directory + '/levels/px1.png')
+                        # self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
+                        # self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
 
-                            start = time.monotonic()
-                            end = time.monotonic()
-                            stop = False
-                            while end - start <= 120:
-                                for event in pygame.event.get():
-                                    if event.type == pygame.KEYDOWN:
-                                        if event.key == 27:
-                                            stop = True
-                                            break
-                                    if event.type == pygame.QUIT:
+                        pygame.mixer.music.load(self.directory + '/sounds/jackson.mp3')
+                        pygame.mixer.music.play(-1)
+                        pygame.mixer.music.set_volume(1)
+
+                        start = time.monotonic()
+                        end = time.monotonic()
+                        stop = False
+                        while end - start <= 240:
+                            for event in pygame.event.get():
+                                if event.type == pygame.KEYDOWN:
+                                    if event.key == 27:
                                         stop = True
-                                        self.pushed = 'exit'
-                                        running = False
-                                if stop:
-                                    break
-                                end = time.monotonic()
+                                        break
+                                if event.type == pygame.QUIT:
+                                    stop = True
+                                    self.pushed = 'exit'
+                                    running = False
+                            if stop:
+                                break
+                            end = time.monotonic()
 
-                            pygame.mixer.music.stop()
+                        pygame.mixer.music.stop()
 
                         self.keysEggs = ''
 
