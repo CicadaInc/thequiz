@@ -37,6 +37,12 @@ class ChooseCharacter:
                             self.textbox.update(self.events)
                             self.nick = self.textbox.value
                             running = False
+                if event.type == pygame.KEYDOWN:
+                    print(event.key)
+                    if event.key == 13:
+                        self.pushed = self.start
+                        self.textbox.update(self.events)
+                        self.nick = self.textbox.value
 
             self.render()
 

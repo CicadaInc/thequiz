@@ -45,7 +45,7 @@ class Game:
 
         self.k = 0
         self.pushed = None
-        self.anim, self.speed = 0, 10
+        self.anim, self.speed = 0, 5
 
         self.set_interface()
 
@@ -58,6 +58,7 @@ class Game:
                     running = False
                     self.pushed = 'exit'
                 if event.type == pygame.KEYDOWN:
+                    print(event.key)
                     if event.key == 27:
                         p = Pause(self.screen, self)
                         if p.pushed == p.quit:
@@ -120,7 +121,7 @@ class Game:
 
                         pygame.mixer.music.load(self.directory + '/sounds/gravity.mp3')
                         pygame.mixer.music.play(-1)
-                        pygame.mixer.music.set_volume(0.7)
+                        pygame.mixer.music.set_volume(0.5)
 
                         start = time.monotonic()
                         end = time.monotonic()
