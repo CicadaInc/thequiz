@@ -4,6 +4,7 @@ from create_field import field
 from Pause import Pause
 import Dialogue
 import Quest1
+import time
 
 
 class Game:
@@ -16,6 +17,7 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
 
+        self.keysEggs = ''
         self.level = field
         self.directory = os.getcwd()
 
@@ -94,6 +96,53 @@ class Game:
                                         self.pushed = 'exit'
                                         running = False
                         print(self.winx, self.winy)
+                    elif event.key == 102:
+                        self.keysEggs += 'f'
+                    elif event.key == 97:
+                        self.keysEggs += 'a'
+                    elif event.key == 108:
+                        self.keysEggs += 'l'
+                    elif event.key == 115:
+                        self.keysEggs += 's'
+
+                    if 'falls' in self.keysEggs or 'gravity' in self.keysEggs:
+                        print('GRAVITY FALLS')
+
+                        # VIEW EGG
+                        surf = pygame.image.load(self.directory + '/levels/px1.png')
+                        rect = surf.get_rect(bottomright=(1000, 600))
+                        self.screen.blit(surf, rect)
+                        pygame.display.flip()
+
+                        # self.background_surf = pygame.image.load(self.directory + '/levels/px1.png')
+                        # self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
+                        # self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+
+                        pygame.mixer.music.load(self.directory + '/sounds/gravity.mp3')
+                        pygame.mixer.music.play(-1)
+                        pygame.mixer.music.set_volume(0.7)
+
+                        start = time.monotonic()
+                        end = time.monotonic()
+                        stop = False
+                        while end - start <= 10:
+                            for event in pygame.event.get():
+                                if event.type == pygame.KEYDOWN:
+                                    if event.key == 27:
+                                        stop = True
+                                        break
+                                if event.type == pygame.QUIT:
+                                    stop = True
+                                    self.pushed = 'exit'
+                                    running = False
+                            if stop:
+                                break
+                            end = time.monotonic()
+
+                        pygame.mixer.music.stop()
+
+                        self.keysEggs = ''
+
 
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
             #print(y // 36, x // 36)
@@ -126,6 +175,7 @@ class Game:
                 self.winy = 600
 
             self.render()
+
             pygame.display.flip()
 
     def load_animations(self):
