@@ -37,7 +37,7 @@ class Game:
         self.up = None
 
         self.oldMan = pygame.transform.scale(pygame.image.load("sprites/OldMan.png"), (48, 64))
-        # self.mario = pygame.transform.scale(pygame.image.load("sprites/guido.png"), (34, 56))
+        self.guide = pygame.transform.scale(pygame.image.load("sprites/guide.png"), (48, 64))
 
         self.font = pygame.font.Font('fonts/freesansbold.ttf', 17)
 
@@ -45,6 +45,7 @@ class Game:
         font.set_bold(True)
         self.nick = font.render(name, False, pygame.Color('blue'))
         self.nameNpc1 = font.render("Brainfuck", 1, pygame.Color('blue'))
+        self.nameNpc2 = font.render("Quide", 1, pygame.Color('blue'))
 
         self.k = 0
         self.pushed = None
@@ -337,11 +338,12 @@ class Game:
         self.screen.blit(self.background_surf, self.background_rect)
 
         self.npc1_x, self.npc1_y = -1730 + self.winx, -2350 + self.winy
-        # print(self.npc1_x, self.npc1_y)
         self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
-        # self.screen.blit(self.mario, (150, 150))
+        self.npc2_x, self.npc2_y = -2590 + self.winx, -1460 + self.winy
+        self.screen.blit(self.guide, (self.npc2_x, self.npc2_y))
 
         self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
+        self.screen.blit(self.nameNpc2, (self.npc2_x + 3, self.npc2_y - 10))
 
         self.screen.blit(self.nick, (self.startx - self.nick.get_width() // 2 + 24,
                                      self.starty - self.nick.get_height() // 2 - 5))

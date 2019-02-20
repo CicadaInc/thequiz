@@ -105,3 +105,6 @@ def create_dialogue5():
             (font.render("выносить мозги.", 1, (0, 0, 0)), (10, 40)),
             (font.render("И да будет карма", 1, (0, 0, 0)), (10, 55)),
             (font.render("твоя чиста", 1, (0, 0, 0)), (10, 70))]
+def create_dialogue6():
+    font = pygame.font.Font('fonts/comic.ttf', 16)
+    return [(font.render("Благодарю тебя, странник.", 1, (0, 0, 0)), (10, 10))]
