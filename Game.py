@@ -41,11 +41,11 @@ class Game:
         font = pygame.font.SysFont('Trebuchet MS', 12)
         font.set_bold(True)
         self.nick = font.render(name, False, pygame.Color('blue'))
-        self.nameNpc1 = font.render("Brain Fuck", 1, pygame.Color('blue'))
+        self.nameNpc1 = font.render("Brainfuck", 1, pygame.Color('blue'))
 
         self.k = 0
         self.pushed = None
-        self.anim, self.speed = 0, 5
+        self.anim, self.speed = 0, 4
 
         self.set_interface()
 
@@ -144,10 +144,9 @@ class Game:
 
                         self.keysEggs = ''
 
-
             x, y = self.winx - self.winw // 2, self.winy - self.winh // 2
-            #print(y // 36, x // 36)
-            #print(self.winx, self.winy)
+            print(y // 36, x // 36)
+            # print(self.winx, self.winy)
 
             keys = pygame.key.get_pressed()
             if keys[pygame.K_LEFT]:
@@ -218,7 +217,7 @@ class Game:
         self.screen.blit(self.background_surf, self.background_rect)
 
         self.npc1_x, self.npc1_y = -1730 + self.winx, -2350 + self.winy
-        #print(self.npc1_x, self.npc1_y)
+        # print(self.npc1_x, self.npc1_y)
         self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
 
         self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
