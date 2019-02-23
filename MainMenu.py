@@ -1,5 +1,6 @@
-import pygame
 import os
+
+import pygame
 
 
 class MainMenu:
@@ -35,7 +36,8 @@ class MainMenu:
                             running = False
                 if event.type == pygame.MOUSEMOTION:
                     for i in range(len(self.buttons)):
-                        if self.buttons[i][1].collidepoint(event.pos) and self.buttons[i][1] != self.motionButton:
+                        if self.buttons[i][1].collidepoint(event.pos) and \
+                                self.buttons[i][1] != self.motionButton:
                             self.motionButton = self.buttons[i][1]
                             self.i = i
                             self.status = 0
@@ -66,22 +68,25 @@ class MainMenu:
         directory = os.getcwd()
 
         # LOAD BACKGROUND
-        self.background_surf = pygame.image.load(directory + '/backgrounds/quizFone.jpg')
-        self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
-        self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+        self.background_surf = pygame.image.load(
+            directory + '/backgrounds/quizFone.jpg')
+        self.background_surf = pygame.transform.scale(self.background_surf,
+                                                      (1000, 600))
+        self.background_rect = self.background_surf.get_rect(
+            bottomright=(1000, 600))
 
-        # LOAD MUSIC
-        # pygame.mixer.music.load(directory + '/sounds/loading.mp3')
-        # pygame.mixer.music.play(-1)
-        # pygame.mixer.music.set_volume(0.3)
+        self.continue_btn = load_image(
+            'sprites/ForGUI/Blue buttons/Play blue button 300x80.png')
+        self.continue_btn_Rect = self.continue_btn.get_rect(
+            bottomright=(355, 205))
 
-        self.continue_btn = load_image('sprites/ForGUI/Blue buttons/Play blue button 300x80.png')
-        self.continue_btn_Rect = self.continue_btn.get_rect(bottomright=(355, 205))
+        self.options_btn = load_image(
+            'sprites/ForGUI/Blue buttons/more blue button 300x80.png')
+        self.options_btn_Rect = self.options_btn.get_rect(
+            bottomright=(355, 305))
 
-        self.options_btn = load_image('sprites/ForGUI/Blue buttons/options blue button 300x80.png')
-        self.options_btn_Rect = self.options_btn.get_rect(bottomright=(355, 305))
-
-        self.quit_btn = load_image('sprites/ForGUI/Blue buttons/Quit blue button 300x80.png')
+        self.quit_btn = load_image(
+            'sprites/ForGUI/Blue buttons/Quit blue button 300x80.png')
         self.quit_btn_Rect = self.quit_btn.get_rect(bottomright=(355, 405))
 
         self.buttons = [(self.continue_btn, self.continue_btn_Rect),
@@ -97,14 +102,15 @@ class MainMenu:
         self.images.append([])
         for i in range(1, 31):
             self.images[-1].append(load_image(
-                self.directory + '/sprites/ForGUI\Blue buttons\options blue button 300x80 hover/' +
-                'option blue button 300x80 (' + str(i) + ').png'))
+                self.directory + '/sprites/ForGUI\Blue buttons\more blue button 300x80 hover/' +
+                'more blue button 300x80 (' + str(i) + ').png'))
 
         self.images.append([])
         for i in range(1, 31):
             self.images[-1].append(load_image(
                 self.directory + '/sprites/ForGUI\Blue buttons\Quit blue button 300x80 hover/' +
                 'quit blue button 300x80 (' + str(i) + ').png'))
+
 
 def load_image(name):
     image = pygame.image.load(name)

@@ -28,7 +28,6 @@ class NewMainMenu:
                     running = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     x, y = event.pos
-                    x += 12
                     if self.coinRect.collidepoint((x, y)):
                         push = True
                         x_, y_ = event.pos[0] - self.x, event.pos[1] - self.y
@@ -73,9 +72,9 @@ class NewMainMenu:
         # LOAD MUSIC
         pygame.mixer.music.load(directory + '/sounds/loading.mp3')
         pygame.mixer.music.play(-1)
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(1)
 
-        font = pygame.font.Font('sprites/freesansbold.ttf', 30)
+        font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 
         # КНОПКИ И НАДПИСИ
         self.buttons = [pygame.draw.rect(self.screen, (0, 0, 0),

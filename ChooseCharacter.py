@@ -11,7 +11,7 @@ class ChooseCharacter:
 
         self.screen = pygame.display.set_mode((1000, 600))
 
-        self.font = pygame.font.Font('sprites/freesansbold.ttf', 30)
+        self.font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 
         self.choosed = choosed
         self.pushed = None
@@ -29,14 +29,20 @@ class ChooseCharacter:
                     for i in range(len(self.chooseButtons)):
                         if self.chooseButtons[i].collidepoint(event.pos):
                             self.choosed = i
-                        elif self.back.collidepoint(event.pos):
+                        elif self.back.collidepoint(*event.pos):
                             self.pushed = self.back
                             running = False
-                        elif self.start.collidepoint(event.pos):
+                        elif self.start.collidepoint(*event.pos):
                             self.pushed = self.start
                             self.textbox.update(self.events)
                             self.nick = self.textbox.value
                             running = False
+                if event.type == pygame.KEYDOWN:
+                    print(event.key)
+                    if event.key == 13:
+                        self.pushed = self.start
+                        self.textbox.update(self.events)
+                        self.nick = self.textbox.value
 
             self.render()
 
@@ -48,9 +54,9 @@ class ChooseCharacter:
 
         # ПОЛЕ ВВОДА НИКА
         pygame.draw.rect(self.screen, (250, 175, 255),
-                         pygame.Rect(665, 150, 200, 43))
+                         pygame.Rect(640, 150, 250, 43))
         pygame.draw.rect(self.screen, (0, 0, 0),
-                         pygame.Rect(665, 150, 200, 43), 2)
+                         pygame.Rect(640, 150, 250, 43), 2)
         self.textbox.update(self.events)
         self.textbox.draw(self.screen)
 
@@ -100,7 +106,7 @@ class ChooseCharacter:
 
         # ПОЛЕ ДЛЯ ВВОДА НИКА
         self.textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='', font=self.font)
-        self.textbox.set_pos(670, 155)
+        self.textbox.set_pos(655, 155)
 
         # BUTTON BACK
         self.back = pygame.Rect(50, 515, 200, 35)
