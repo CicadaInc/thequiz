@@ -195,3 +195,7 @@ for i in range(23, 28):
 for j in range(29, 33):
     for i in range(28, 33):
         field[i][j] = 1
+
+field[18][46] = 1
+field[16][45] = 1
+field[17][46] = 1

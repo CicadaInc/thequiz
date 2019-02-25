@@ -27,6 +27,7 @@ class Game:
         self.level = field
         self.directory = os.getcwd()
 
+        self.show_info_flower = False
         self.solved1, self.solved2, self.solved3 = False, False, False
 
         self.character = character
@@ -42,7 +43,7 @@ class Game:
 
         self.k = 0
         self.pushed = None
-        self.anim, self.speed = 0, 10
+        self.anim, self.speed = 0, 5
 
         self.set_interface()
 
@@ -63,105 +64,81 @@ class Game:
                             running = False
                     elif event.key == 101:
                         self.keysEggs += 'e'
-                        if abs(self.npc1_x - 470) < 35 and abs(
-                                self.npc1_y - 200) < 35:
+                        if abs(self.npc1_x - 470) < 35 and abs(self.npc1_y - 200) < 35:
                             if not self.solved1:
-                                phrases = Dialogue.create_dialogue1()
+                                phrases = Dialogue.create_dialogue11()
                             else:
-                                phrases = Dialogue.create_dialogue5()
+                                phrases = Dialogue.create_dialogue15()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 running = False
-                        elif abs(self.npc2_x - 472) < 35 and abs(
-                                self.npc2_y - 210) < 35:
-                            phrases = Dialogue.create_dialogue01()
-                            di = Dialogue.Dialogue(self.screen, self, phrases)
-                            if di.pushed == 'exit':
-                                running = False
-                        elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 and not self.solved1:
-                            phrases = Dialogue.create_dialogue2()
+                        elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 \
+                                and not self.solved1:
+                            phrases = Dialogue.create_dialogue12()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 self.pushed = 'exit'
                                 running = False
                             else:
-                                phrases = Quest1.create_dialogue1()
+                                phrases = Quest1.create_text()
                                 di = Quest1.Quest(self.screen, self, phrases)
                                 if di.pushed == 'exit':
                                     self.pushed = 'exit'
                                     running = False
                                 elif di.pushed == 'valid':
                                     self.solved1 = True
-                                    phrases = Dialogue.create_dialogue3()
+                                    phrases = Dialogue.create_dialogue13()
                                 elif di.pushed == 'wrong':
-                                    phrases = Dialogue.create_dialogue4()
-                                if not (
-                                        di.pushed is None) and di.pushed != 'exit':
-                                    di = Dialogue.Dialogue(self.screen, self,
-                                                           phrases)
+                                    phrases = Dialogue.create_dialogue14()
+                                if not (di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self, phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
-                    elif event.key == 102:
-                        self.keysEggs += 'f'
-                    elif event.key == 97:
-                        self.keysEggs += 'a'
-                    elif event.key == 108:
-                        self.keysEggs += 'l'
-                    elif event.key == 115:
-                        self.keysEggs += 's'
-                    elif event.key == 98:
-                        self.keysEggs += 'b'
-                    elif event.key == 99:
-                        self.keysEggs += 'c'
-                    elif event.key == 100:
-                        self.keysEggs += 'd'
-                    elif event.key == 102:
-                        self.keysEggs += 'f'
-                    elif event.key == 103:
-                        self.keysEggs += 'g'
-                    elif event.key == 104:
-                        self.keysEggs += 'h'
-                    elif event.key == 105:
-                        self.keysEggs += 'i'
-                    elif event.key == 106:
-                        self.keysEggs += 'j'
-                    elif event.key == 107:
-                        self.keysEggs += 'k'
-                    elif event.key == 108:
-                        self.keysEggs += 'l'
-                    elif event.key == 109:
-                        self.keysEggs += 'm'
-                    elif event.key == 110:
-                        self.keysEggs += 'n'
-                    elif event.key == 111:
-                        self.keysEggs += 'o'
-                    elif event.key == 112:
-                        self.keysEggs += 'p'
-                    elif event.key == 114:
-                        self.keysEggs += 'r'
-                    elif event.key == 115:
-                        self.keysEggs += 's'
-                    elif event.key == 116:
-                        self.keysEggs += 't'
-                    elif event.key == 117:
-                        self.keysEggs += 'u'
-                    elif event.key == 118:
-                        self.keysEggs += 'v'
-                    elif event.key == 119:
-                        self.keysEggs += 'w'
-                    elif event.key == 120:
-                        self.keysEggs += 'x'
-                    elif event.key == 121:
-                        self.keysEggs += 'y'
-                    elif event.key == 122:
-                        self.keysEggs += 'z'
-                    elif event.key == 113:
-                        self.keysEggs += 'q'
-                        if self.michael is False:
-                            self.michael = True
-                        else:
-                            self.michael = False
+                        elif abs(self.npc2_x - 472) < 35 and abs(self.npc2_y - 210) < 35:
+                            if not self.solved2:
+                                phrases = Dialogue.create_dialogue01()
+                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                            else:
+                                if not self.show_info_flower:
+                                    self.show_info_flower = True
+                                    phrases = Dialogue.create_dialogue04()
+                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                    if di.pushed == 'exit':
+                                        running = False
+                                phrases = Dialogue.create_dialogue05()
+                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                                phrases = Dialogue.create_dialogue06()
+                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                        elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780\
+                                and not self.solved2:
+                            phrases = Dialogue.create_dialogue02()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                self.pushed = 'exit'
+                                running = False
+                            else:
+                                phrases = Quest2.create_text()
+                                di = Quest2.Quest(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    self.pushed = 'exit'
+                                    running = False
+                                elif di.pushed == 'valid':
+                                    self.solved2 = True
+                                    phrases = Dialogue.create_dialogue03()
+                                elif di.pushed == 'wrong':
+                                    phrases = Dialogue.create_dialogue14()
+                                if not (di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                    if di.pushed == 'exit':
+                                        self.pushed = 'exit'
+                                        running = False
 
             self.textbox.update(self.events)
             if 'falls' in self.textbox.value or 'gravity' in self.textbox.value:
@@ -173,10 +150,10 @@ class Game:
                 Egg(self.screen, self.directory + '/levels/px2.jpg',
                     self.directory + '/sounds/jackson.mp3')
                 self.textbox.value = ''
-                self.michael = True
+                self.michael = not self.michael
 
             x, y = (self.winx - 525) - self.winw // 2, (
-                        self.winy - 250) - self.winh // 2
+                    self.winy - 250) - self.winh // 2
             print(y // 36, x // 36)
             print(self.winx, self.winy)
             self.move_player()
@@ -188,45 +165,57 @@ class Game:
 
     def move_player(self):
         x, y = (self.winx - 525) - self.winw // 2, (
-                    self.winy - 250) - self.winh // 2
+                self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
-            if self.level[y // 36][(x + self.speed + 12) // 36] == 0:
-                if not self.michael:
+            if not self.michael:
+                if self.level[y // 36][(x + self.speed + 12) // 36] == 0:
                     self.winx += self.speed
                 else:
-                    self.winx -= self.speed
-                self.left, self.up = True, None
+                    self.up, self.left = None, None
             else:
-                self.left, self.up = None, None
+                if self.level[y // 36][(x - self.speed) // 36] == 0:
+                    self.winx -= self.speed
+                else:
+                    self.up, self.left = None, None
+            self.up, self.left = None, True
         elif keys[pygame.K_RIGHT]:
-            if self.level[y // 36][(x - self.speed) // 36] == 0:
-                if not self.michael:
+            if not self.michael:
+                if self.level[y // 36][(x - self.speed) // 36] == 0:
                     self.winx -= self.speed
                 else:
+                    self.up, self.left = None, None
+            else:
+                if self.level[y // 36][(x + self.speed + 12) // 36] == 0:
                     self.winx += self.speed
-                self.left, self.up = False, None
-            else:
-                self.up, self.left = None, None
+                else:
+                    self.up, self.left = None, None
+            self.up, self.left = None, False
         elif keys[pygame.K_UP]:
-            if self.level[(y + self.speed) // 36][x // 36] == 0:
-                if not self.michael:
+            if not self.michael:
+                if self.level[(y + self.speed) // 36][x // 36] == 0:
                     self.winy += self.speed
                 else:
-                    self.winy -= self.speed
-                self.up, self.left = True, None
+                    self.up, self.left = None, None
             else:
-                self.up, self.left = None, None
+                if self.level[(y - self.speed) // 36][x // 36] == 0:
+                    self.winy -= self.speed
+                else:
+                    self.up, self.left = None, None
+            self.up, self.left = True, None
         elif keys[pygame.K_DOWN]:
-            if self.level[(y - self.speed) // 36][x // 36] == 0:
-                if not self.michael:
+            if not self.michael:
+                if self.level[(y - self.speed) // 36][x // 36] == 0:
                     self.winy -= self.speed
                 else:
-                    self.winy += self.speed
-                self.up, self.left = False, None
+                    self.up, self.left = None, None
             else:
-                self.up, self.left = None, None
+                if self.level[(y + self.speed) // 36][x // 36] == 0:
+                    self.winy += self.speed
+                else:
+                    self.up, self.left = None, None
+            self.up, self.left = False, None
         else:
             self.left, self.up = None, None
             self.anim = 0
@@ -296,7 +285,7 @@ class Game:
         font.set_bold(True)
         self.nick = font.render(self.name, False, pygame.Color('blue'))
         self.nameNpc1 = font.render("Brainfuck", 1, pygame.Color('blue'))
-        self.nameNpc2 = font.render("Проводник", 1, pygame.Color('blue'))
+        self.nameNpc2 = font.render("Гид Абрам", 1, pygame.Color('blue'))
 
         self.textbox = eztext.Input(maxlength=1000, color=(0, 0, 0), prompt='',
                                     font=self.font)
