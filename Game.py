@@ -18,6 +18,8 @@ class Game:
         self.winw, self.winh = 1000, 600
         self.winx, self.winy = 2852, 1805
 
+        self.eggs = 0
+
         self.name = name
 
         self.screen = pygame.display.set_mode((1000, 600))
@@ -150,20 +152,46 @@ class Game:
 
             self.textbox.update(self.events)
             if 'falls' in self.textbox.value or 'gravity' in self.textbox.value:
+                self.eggs += 1
                 Egg(self.screen, self.directory + '/levels/px1.png',
                     self.directory + '/sounds/gravity.mp3')
                 self.textbox.value = ''
 
             if 'queen' in self.textbox.value or 'free' in self.textbox.value:
+                self.eggs += 1
                 Egg(self.screen, self.directory + '/levels/queen.jpg',
                     self.directory + '/sounds/queen.mp3')
                 self.textbox.value = ''
 
             if 'michael' in self.textbox.value or 'jackson' in self.textbox.value:
+                self.eggs += 1
                 Egg(self.screen, self.directory + '/levels/px2.jpg',
                     self.directory + '/sounds/jackson.mp3')
                 self.textbox.value = ''
                 self.michael = not self.michael
+
+            if self.eggs == 3:
+                self.surf = pygame.image.load(self.directory + '/levels/theend.jpg')
+                self.rect = self.surf.get_rect(bottomright=(1000, 600))
+
+                self.screen.blit(self.surf, self.rect)
+                pygame.mixer.music.load(self.directory + '/sounds/end.mp3')
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
+                start = time.monotonic()
+                end = time.monotonic()
+                pygame.display.flip()
+                end_of_end = False
+                while end - start < 180:
+                    if end_of_end:
+                        break
+                    end = time.monotonic()
+                    for event in pygame.event.get():
+                        if event.type == pygame.QUIT:
+                            end_of_end = True
+
+                running = False
+                self.pushed = 'exit'
 
             x, y = (self.winx - 525) - self.winw // 2, (
                     self.winy - 250) - self.winh // 2
