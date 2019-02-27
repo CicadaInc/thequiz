@@ -8,6 +8,7 @@ import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
+import time
 
 
 class Game:
@@ -23,7 +24,6 @@ class Game:
         pygame.display.set_caption("TheQuiz")
 
         self.michael = False
-        self.musicStatus = False
         self.keysEggs = ''
         self.level = field
         self.directory = os.getcwd()
@@ -36,11 +36,15 @@ class Game:
         self.walkRight, self.walkLeft, self.walkUp, self.walkDown = [], [], [], []
         self.load_animations()
 
+        self.music_played = False
+
         self.clock = pygame.time.Clock()
 
         self.startx, self.starty = 468, 210
         self.right = None
         self.up = None
+
+        stime = 0
 
         self.k = 0
         self.pushed = None
@@ -50,7 +54,10 @@ class Game:
 
         running = True
         while running:
-            self.clock.tick(60)
+            t = self.clock.tick(60)
+
+            if self.music_played:
+                stime += t
 
             self.events = pygame.event.get()
             for event in self.events:
@@ -117,7 +124,7 @@ class Game:
                                 di = Dialogue.Dialogue(self.screen, self, phrases)
                                 if di.pushed == 'exit':
                                     running = False
-                        elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780\
+                        elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780 \
                                 and not self.solved2:
                             phrases = Dialogue.create_dialogue02()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
@@ -162,6 +169,26 @@ class Game:
                     self.winy - 250) - self.winh // 2
             print(y // 36, x // 36)
             print(self.winx, self.winy)
+
+            if y // 36 == 48 and x // 36 == 13 and not self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/NLO.mp3')
+                pygame.mixer.music.play(0)
+                pygame.mixer.music.set_volume(1)
+                self.music_played = True
+
+            if y // 36 == 53 and x // 36 == 32 and not self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/GodKnows.mp3')
+                pygame.mixer.music.play(0)
+                pygame.mixer.music.set_volume(1)
+                self.music_played = True
+
+            if stime > 1500 and self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/loading.mp3')
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
+                stime = 0
+                self.music_played = False
+
             self.move_player()
             self.check_border_relative()
 

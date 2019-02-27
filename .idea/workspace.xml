@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ec4fd1-50c0-40a5-9d62-857d4c075682" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/thequiz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/thequiz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Шкут Марк.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChooseCharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChooseCharacter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoreInformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoreInformation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewMainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewMainMenu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pause.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pause.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quest1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quest1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_field.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eztext.py" beforeDir="false" afterPath="$PROJECT_DIR$/eztext.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/field.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/MainLocation.png" beforeDir="false" afterPath="$PROJECT_DIR$/levels/MainLocation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/px2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/levels/px2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -41,13 +25,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Egg.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="262">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,6 +69,16 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mixer.load</find>
+      <find>musi</find>
+      <find>musicS</find>
+      <find>clock</find>
+      <find>clock.tick</find>
+      <find>px1</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -71,6 +86,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/create_field.py" />
+        <option value="$PROJECT_DIR$/Game.py" />
+        <option value="$PROJECT_DIR$/NewMainMenu.py" />
       </list>
     </option>
   </component>
@@ -115,7 +132,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Game">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="thequiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,10 +175,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="NewMainMenu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="thequiz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NewMainMenu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game" />
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.NewMainMenu" />
+        <item itemvalue="Python.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -202,16 +241,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create_field.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
@@ -219,12 +248,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Egg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="262">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
