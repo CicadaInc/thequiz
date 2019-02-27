@@ -284,8 +284,8 @@ class Game:
     def check_border_relative(self):
         if self.winx > 4650:
             self.winx = 4650
-        if self.winx < 1150:
-            self.winx = 1150
+        if self.winx < 1125:
+            self.winx = 1125
         if self.winy > 2690:
             self.winy = 2690
         if self.winy < 670:
