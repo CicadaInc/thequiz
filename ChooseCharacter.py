@@ -29,10 +29,10 @@ class ChooseCharacter:
                     for i in range(len(self.chooseButtons)):
                         if self.chooseButtons[i].collidepoint(event.pos):
                             self.choosed = i
-                        elif self.back.collidepoint(event.pos):
+                        elif self.back.collidepoint(*event.pos):
                             self.pushed = self.back
                             running = False
-                        elif self.start.collidepoint(event.pos):
+                        elif self.start.collidepoint(*event.pos):
                             self.pushed = self.start
                             self.textbox.update(self.events)
                             self.nick = self.textbox.value

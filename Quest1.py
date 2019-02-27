@@ -1,5 +1,5 @@
-import pygame
 import eztext
+import pygame
 
 
 class Quest:
@@ -36,7 +36,6 @@ class Quest:
                         except ValueError:
                             pass
 
-
             self.render()
             pygame.display.flip()
 
@@ -49,8 +48,9 @@ class Quest:
         self.accept_text = self.font.render("Принять", 1, (0, 0, 0))
         self.accept_x, self.accept_y = 20, 145
 
-        self.input = pygame.Rect(94, 98, 40, 20)
-        self.textbox = eztext.Input(maxlength=3, color=(0, 0, 0), prompt='', font=self.font)
+        self.input = pygame.Rect(96, 97, 40, 20)
+        self.textbox = eztext.Input(maxlength=3, color=(0, 0, 0), prompt='',
+                                    font=self.font)
         self.textbox.set_pos(97, 100)
 
         self.win = pygame.Rect(0, 0, 229, 179)
@@ -87,7 +87,7 @@ class Quest:
         self.screen.blit(self.cursor, rect)
 
 
-def create_dialogue1():
+def create_text():
     font = pygame.font.Font('fonts/comic.ttf', 19)
 
     return [(font.render("Введите значение,", 1, (0, 0, 0)), (10, 10)),

@@ -1,13 +1,14 @@
-from MainMenu import MainMenu
-from NewMainMenu import NewMainMenu
+import pygame
 from ChooseCharacter import ChooseCharacter
 from Game import Game
+from MainMenu import MainMenu
 from MoreInformation import Information
-import pygame
+from NewMainMenu import NewMainMenu
 
 mainWin0 = NewMainMenu()
 
-HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)', '3(Townfolk-Adult-M-006)',
+HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)',
+          '3(Townfolk-Adult-M-006)',
           '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 while True:
     if mainWin0.pushed == pygame.Rect(624, 392, 90, 40):
@@ -17,7 +18,8 @@ while True:
             if chooseChar:
                 if chooseChar.pushed == pygame.Rect(50, 515, 201, 36):  # Назад
                     continue
-                elif chooseChar.pushed == pygame.Rect(750, 515, 200, 35):  # Старт
+                elif chooseChar.pushed == pygame.Rect(750, 515, 200,
+                                                      35):  # Старт
                     hero = HEROES[chooseChar.choosed]
                     gameWin = Game(hero, chooseChar.nick)
                     if gameWin.pushed == 'exit':

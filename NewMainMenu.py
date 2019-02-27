@@ -75,6 +75,7 @@ class NewMainMenu:
         pygame.mixer.music.set_volume(1)
 
         font = pygame.font.Font('fonts/freesansbold.ttf', 30)
+        font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 
         # КНОПКИ И НАДПИСИ
         self.buttons = [pygame.draw.rect(self.screen, (0, 0, 0),
