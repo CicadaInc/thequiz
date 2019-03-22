@@ -1,4 +1,5 @@
 import os
+import time
 
 import Dialogue
 import Quest1
@@ -8,7 +9,6 @@ import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
-import time
 
 
 class Game:
@@ -80,7 +80,8 @@ class Game:
                             running = False
                     elif event.key == 101:
                         self.keysEggs += 'e'
-                        if abs(self.npc1_x - 470) < 35 and abs(self.npc1_y - 200) < 35:
+                        if abs(self.npc1_x - 470) < 35 and abs(
+                                self.npc1_y - 200) < 35:
                             if not self.solved1:
                                 phrases = Dialogue.create_dialogue11()
                             else:
@@ -106,30 +107,37 @@ class Game:
                                     phrases = Dialogue.create_dialogue13()
                                 elif di.pushed == 'wrong':
                                     phrases = Dialogue.create_dialogue14()
-                                if not (di.pushed is None) and di.pushed != 'exit':
-                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                if not (
+                                        di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self,
+                                                           phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
-                        elif abs(self.npc2_x - 472) < 35 and abs(self.npc2_y - 210) < 35:
+                        elif abs(self.npc2_x - 472) < 35 and abs(
+                                self.npc2_y - 210) < 35:
                             if not self.solved2:
                                 phrases = Dialogue.create_dialogue01()
-                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
                                 if di.pushed == 'exit':
                                     running = False
                             else:
                                 if not self.show_info_flower:
                                     self.show_info_flower = True
                                     phrases = Dialogue.create_dialogue04()
-                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                    di = Dialogue.Dialogue(self.screen, self,
+                                                           phrases)
                                     if di.pushed == 'exit':
                                         running = False
                                 phrases = Dialogue.create_dialogue05()
-                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
                                 if di.pushed == 'exit':
                                     running = False
                                 phrases = Dialogue.create_dialogue06()
-                                di = Dialogue.Dialogue(self.screen, self, phrases)
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
                                 if di.pushed == 'exit':
                                     running = False
                         elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780 \
@@ -150,8 +158,10 @@ class Game:
                                     phrases = Dialogue.create_dialogue03()
                                 elif di.pushed == 'wrong':
                                     phrases = Dialogue.create_dialogue14()
-                                if not (di.pushed is None) and di.pushed != 'exit':
-                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                if not (
+                                        di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self,
+                                                           phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
@@ -208,7 +218,8 @@ class Game:
                     self.jackson = False
 
             if self.eggs == 6:
-                self.surf = pygame.image.load(self.directory + '/levels/theend.jpg')
+                self.surf = pygame.image.load(
+                    self.directory + '/levels/theend.jpg')
                 self.rect = self.surf.get_rect(bottomright=(1000, 600))
 
                 self.screen.blit(self.surf, self.rect)
@@ -231,7 +242,7 @@ class Game:
                 self.pushed = 'exit'
 
             x, y = (self.winx - 525) - self.winw // 2, (
-                self.winy - 250) - self.winh // 2
+                    self.winy - 250) - self.winh // 2
             print(y // 36, x // 36)
             print(self.winx, self.winy)
 
@@ -248,7 +259,8 @@ class Game:
                 self.music_played = True
 
             elif y // 36 == 6 and x // 36 == 66 and not self.music_played:
-                pygame.mixer.music.load(self.directory + '/sounds/morse_code.mp3')
+                pygame.mixer.music.load(
+                    self.directory + '/sounds/morse_code.mp3')
                 pygame.mixer.music.play(0)
                 pygame.mixer.music.set_volume(1)
                 stime = 0
@@ -270,7 +282,7 @@ class Game:
 
     def move_player(self):
         x, y = (self.winx - 525) - self.winw // 2, (
-            self.winy - 250) - self.winh // 2
+                self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
