@@ -1,5 +1,6 @@
 import pygame
 import time
+import os
 
 
 class Egg:
@@ -9,6 +10,7 @@ class Egg:
         self.surf = pygame.image.load(img_path)
         self.rect = self.surf.get_rect(bottomright=(1000, 600))
 
+        self.directory = os.getcwd()
         pygame.mixer.music.load(sound_path)
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(1)
@@ -25,7 +27,9 @@ class Egg:
                     stop = True
                     self.pushed = 'exit'
             if stop:
-                pygame.mixer.music.stop()
+                pygame.mixer.music.load(self.directory + '/sounds/loading.mp3')
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
                 break
 
             end = time.monotonic()

@@ -2,11 +2,13 @@ import os
 
 import Dialogue
 import Quest1
+import Quest2
 import eztext
 import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
+import time
 
 
 class Game:
@@ -16,13 +18,20 @@ class Game:
         self.winw, self.winh = 1000, 600
         self.winx, self.winy = 2852, 1805
 
+        self.eggs = 0
+        self.falls = True
+        self.queen = True
+        self.sonic = True
+        self.watchdogs = True
+        self.python = True
+        self.jackson = True
+
         self.name = name
 
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
 
         self.michael = False
-        self.musicStatus = False
         self.keysEggs = ''
         self.level = field
         self.directory = os.getcwd()
@@ -35,11 +44,15 @@ class Game:
         self.walkRight, self.walkLeft, self.walkUp, self.walkDown = [], [], [], []
         self.load_animations()
 
+        self.music_played = False
+
         self.clock = pygame.time.Clock()
 
         self.startx, self.starty = 468, 210
         self.right = None
         self.up = None
+
+        stime = 0
 
         self.k = 0
         self.pushed = None
@@ -49,7 +62,10 @@ class Game:
 
         running = True
         while running:
-            self.clock.tick(60)
+            t = self.clock.tick(60)
+
+            if self.music_played:
+                stime += t
 
             self.events = pygame.event.get()
             for event in self.events:
@@ -116,7 +132,7 @@ class Game:
                                 di = Dialogue.Dialogue(self.screen, self, phrases)
                                 if di.pushed == 'exit':
                                     running = False
-                        elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780\
+                        elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780 \
                                 and not self.solved2:
                             phrases = Dialogue.create_dialogue02()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
@@ -141,21 +157,110 @@ class Game:
                                         running = False
 
             self.textbox.update(self.events)
+
             if 'falls' in self.textbox.value or 'gravity' in self.textbox.value:
-                Egg(self.screen, self.directory + '/levels/px1.png',
-                    self.directory + '/sounds/gravity.mp3')
-                self.textbox.value = ''
+                if self.falls:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/px1.png',
+                        self.directory + '/sounds/gravity.mp3')
+                    self.textbox.value = ''
+                    self.falls = False
+
+            if 'queen' in self.textbox.value or 'free' in self.textbox.value:
+                if self.queen:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/queen.jpg',
+                        self.directory + '/sounds/queen.mp3')
+                    self.textbox.value = ''
+                    self.queen = False
+
+            if 'sonic' in self.textbox.value:
+                if self.sonic:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/sonic.jpg',
+                        self.directory + '/sounds/sonic.mp3')
+                    self.textbox.value = ''
+                    self.sonic = False
+
+            if 'watch' in self.textbox.value or 'dogs' in self.textbox.value:
+                if self.watchdogs:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/dogs.jpg',
+                        self.directory + '/sounds/dogs.mp3')
+                    self.textbox.value = ''
+                    self.watchdogs = False
+
+            if 'python' in self.textbox.value:
+                if self.python:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/python.jpg',
+                        self.directory + '/sounds/dogs.mp3')
+                    self.textbox.value = ''
+                    self.python = False
 
             if 'michael' in self.textbox.value or 'jackson' in self.textbox.value:
-                Egg(self.screen, self.directory + '/levels/px2.jpg',
-                    self.directory + '/sounds/jackson.mp3')
-                self.textbox.value = ''
-                self.michael = not self.michael
+                if self.jackson:
+                    self.eggs += 1
+                    Egg(self.screen, self.directory + '/levels/px2.jpg',
+                        self.directory + '/sounds/jackson.mp3')
+                    self.textbox.value = ''
+                    self.michael = not self.michael
+                    self.jackson = False
+
+            if self.eggs == 6:
+                self.surf = pygame.image.load(self.directory + '/levels/theend.jpg')
+                self.rect = self.surf.get_rect(bottomright=(1000, 600))
+
+                self.screen.blit(self.surf, self.rect)
+                pygame.mixer.music.load(self.directory + '/sounds/end.mp3')
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
+                start = time.monotonic()
+                end = time.monotonic()
+                pygame.display.flip()
+                end_of_end = False
+                while end - start < 180:
+                    if end_of_end:
+                        break
+                    end = time.monotonic()
+                    for event in pygame.event.get():
+                        if event.type == pygame.QUIT:
+                            end_of_end = True
+
+                running = False
+                self.pushed = 'exit'
 
             x, y = (self.winx - 525) - self.winw // 2, (
-                    self.winy - 250) - self.winh // 2
+                self.winy - 250) - self.winh // 2
             print(y // 36, x // 36)
             print(self.winx, self.winy)
+
+            if y // 36 == 48 and x // 36 == 13 and not self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/NLO.mp3')
+                pygame.mixer.music.play(0)
+                pygame.mixer.music.set_volume(1)
+                self.music_played = True
+
+            elif y // 36 == 53 and x // 36 == 32 and not self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/GodKnows.mp3')
+                pygame.mixer.music.play(0)
+                pygame.mixer.music.set_volume(1)
+                self.music_played = True
+
+            elif y // 36 == 6 and x // 36 == 66 and not self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/morse_code.mp3')
+                pygame.mixer.music.play(0)
+                pygame.mixer.music.set_volume(1)
+                stime = 0
+                self.music_played = True
+
+            elif stime > 1500 and self.music_played:
+                pygame.mixer.music.load(self.directory + '/sounds/loading.mp3')
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
+                stime = 0
+                self.music_played = False
+
             self.move_player()
             self.check_border_relative()
 
@@ -165,7 +270,7 @@ class Game:
 
     def move_player(self):
         x, y = (self.winx - 525) - self.winw // 2, (
-                self.winy - 250) - self.winh // 2
+            self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
@@ -223,12 +328,12 @@ class Game:
     def check_border_relative(self):
         if self.winx > 4650:
             self.winx = 4650
-        if self.winx < 1050:
-            self.winx = 1050
+        if self.winx < 1125:
+            self.winx = 1125
         if self.winy > 2690:
             self.winy = 2690
-        if self.winy < 610:
-            self.winy = 610
+        if self.winy < 670:
+            self.winy = 670
 
     def load_animations(self):
         for i in range(1, 4):

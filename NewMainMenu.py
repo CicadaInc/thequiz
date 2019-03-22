@@ -1,5 +1,7 @@
 import pygame
 import os
+from Egg import Egg
+import time
 
 
 class NewMainMenu:
@@ -9,6 +11,20 @@ class NewMainMenu:
         self.winWidth = 1000
         self.winHeight = 600
         self.screen = pygame.display.set_mode((self.winWidth, self.winHeight))
+        self.directory = os.getcwd()
+
+        self.surf = pygame.image.load(self.directory + '/levels/diskleimer.jpg')
+        self.rect = self.surf.get_rect(bottomright=(1000, 600))
+
+        self.screen.blit(self.surf, self.rect)
+        pygame.mixer.music.load(self.directory + '/sounds/papapa.mp3')
+        pygame.mixer.music.play(0)
+        pygame.mixer.music.set_volume(1)
+        start = time.monotonic()
+        end = time.monotonic()
+        pygame.display.flip()
+        while end - start < 3:
+            end = time.monotonic()
 
         self.x, self.y = 250, 445
 
@@ -74,6 +90,7 @@ class NewMainMenu:
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(1)
 
+        font = pygame.font.Font('fonts/freesansbold.ttf', 30)
         font = pygame.font.Font('fonts/freesansbold.ttf', 30)
 
         # КНОПКИ И НАДПИСИ
