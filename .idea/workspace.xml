@@ -3,13 +3,133 @@
   <component name="ChangeListManager">
     <list default="true" id="c9fb9acd-d6a1-4189-83a6-f329ab9fd331" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChooseCharacter.py" beforeDir="false" afterPath="$PROJECT_DIR$/ChooseCharacter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egg.py" beforeDir="false" afterPath="$PROJECT_DIR$/Egg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainGameLevel.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGameLevel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoreInformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/MoreInformation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewMainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewMainMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pause.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pause.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quest1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quest1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quest2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Statistic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/TМ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFone.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFonetest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/ь.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/create_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_field.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eztext.py" beforeDir="false" afterPath="$PROJECT_DIR$/eztext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/field.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/findEggs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/Inner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/NPC_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/Overworld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/character.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/font.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/log.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gfx/objects.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/DOWN_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/DOWN_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/RIGHT_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/RIGHT_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/RIGHT_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/RIGHT_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/STAY.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/STAY.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/UP_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/1(Townfolk-Child-M-001)/UP_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/LEFT_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/LEFT_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/RIGHT_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/RIGHT_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/RIGHT_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/RIGHT_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/UP_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/2(Townfolk-Child-M)/UP_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/24x32 black characters pack.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/24x32-characters-big-pack-by-Svetlana-Kushnariova.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/3(Townfolk-Adult-M-006)/UP_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/3(Townfolk-Adult-M-006)/UP_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/4(coriander publish.)/RIGHT_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/4(coriander publish.)/RIGHT_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/4(coriander publish.)/RIGHT_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/4(coriander publish.)/RIGHT_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/5(Mushroom-01)/DOWN_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/5(Mushroom-01)/DOWN_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/5(Mushroom-01)/DOWN_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/5(Mushroom-01)/DOWN_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/5(Mushroom-01)/RIGHT_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/5(Mushroom-01)/RIGHT_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/5(Mushroom-01)/RIGHT_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/5(Mushroom-01)/RIGHT_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/5(Mushroom-01)/UP_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/sprites/5(Mushroom-01)/UP_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/Inner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/STAY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MaybeNewSprites/walkcyclevarious.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/NPC_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/Overworld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/freesansbold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/log.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/shichimi publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state relative-caret-position="475">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -32,19 +152,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MainMenu.py">
+        <entry file="file://$PROJECT_DIR$/Dialogue.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1972">
-              <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+            <state relative-caret-position="-527">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
+        <entry file="file://$PROJECT_DIR$/ChooseCharacter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="1524">
+              <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -55,8 +175,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+            <state relative-caret-position="340">
+              <caret line="86" column="50" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="50" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -65,22 +185,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Quest2.py">
+        <entry file="file://$PROJECT_DIR$/create_field.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/field.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="-5356">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -96,6 +204,15 @@
       <find>//</find>
       <find>/ 3</find>
       <find>3</find>
+      <find>findEggs</find>
+      <find>FindEggs</find>
+      <find>freesansbold.ttf</find>
+      <find>eztext.py</find>
+      <find>eztext</find>
+      <find>self.images</find>
+      <find>jackson</find>
+      <find>self.eggs</find>
+      <find>Egg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,12 +221,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DRa0.716/mouse.py" />
+        <option value="$PROJECT_DIR$/eztext.py" />
+        <option value="$PROJECT_DIR$/Quest1.py" />
         <option value="$PROJECT_DIR$/Quest2.py" />
         <option value="$PROJECT_DIR$/NewMainMenu.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/MainMenu.py" />
+        <option value="$PROJECT_DIR$/Pause.py" />
+        <option value="$PROJECT_DIR$/MoreInformation.py" />
+        <option value="$PROJECT_DIR$/MainGameLevel.py" />
+        <option value="$PROJECT_DIR$/Egg.py" />
+        <option value="$PROJECT_DIR$/Dialogue.py" />
+        <option value="$PROJECT_DIR$/create_field.py" />
         <option value="$PROJECT_DIR$/Game.py" />
+        <option value="$PROJECT_DIR$/ChooseCharacter.py" />
       </list>
     </option>
   </component>
@@ -123,7 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -135,6 +260,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -153,7 +279,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Game">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="thequiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -196,48 +322,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="MainMenu" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="thequiz" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainMenu.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="NewMainMenu" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="thequiz" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NewMainMenu.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Quest2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="thequiz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,20 +343,62 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="findEggs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="thequiz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/findEggs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="thequiz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.Main" />
-      <item itemvalue="Python.NewMainMenu" />
-      <item itemvalue="Python.MainMenu" />
       <item itemvalue="Python.Game" />
       <item itemvalue="Python.Quest2" />
+      <item itemvalue="Python.findEggs" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Game" />
-        <item itemvalue="Python.Quest2" />
         <item itemvalue="Python.Main" />
-        <item itemvalue="Python.MainMenu" />
-        <item itemvalue="Python.NewMainMenu" />
+        <item itemvalue="Python.Game" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.findEggs" />
+        <item itemvalue="Python.Quest2" />
       </list>
     </recent_temporary>
   </component>
@@ -291,8 +417,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09590044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23572475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -313,19 +440,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.716/mouse.py" />
-    <entry file="file://$PROJECT_DIR$/ChooseCharacter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1581">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sprites/Overworld.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/objects.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sprites/NPC_test.png">
@@ -337,55 +452,9 @@
     <entry file="file://$PROJECT_DIR$/sprites/Inner.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/Game_building.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/font.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sprites/coin.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/sprites/character.png" />
     <entry file="file://$PROJECT_DIR$/sprites/cave.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1972">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Quest2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/field.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -394,10 +463,172 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Statistic.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/findEggs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-851">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eztext.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quest2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pause.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MoreInformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGameLevel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/create_field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5356">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/coin.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/font.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/Game_building.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/guide.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/objects.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sprites/OldMan.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChooseCharacter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1524">
+          <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Egg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainMenu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dialogue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Quest1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+        <state relative-caret-position="340">
+          <caret line="86" column="50" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="50" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

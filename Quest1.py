@@ -1,5 +1,6 @@
-import eztext
 import pygame
+
+import eztext
 
 
 class Quest:

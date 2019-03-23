@@ -1,5 +1,6 @@
-import eztext
 import pygame
+
+import eztext
 
 
 class Quest:
@@ -46,7 +47,8 @@ class Quest:
         self.accept_x, self.accept_y = 20, 207
 
         self.input = pygame.Rect(90, 170, 50, 25)
-        self.textbox = eztext.Input(maxlength=3, color=(0, 0, 0), prompt='', font=self.font)
+        self.textbox = eztext.Input(maxlength=3, color=(0, 0, 0), prompt='',
+                                    font=self.font)
         self.textbox.set_pos(97, 172)
 
         self.win = pygame.Rect(0, 0, 229, 239)

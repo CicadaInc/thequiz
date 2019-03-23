@@ -1,4 +1,5 @@
 import pygame
+
 from ChooseCharacter import ChooseCharacter
 from Game import Game
 from MainMenu import MainMenu

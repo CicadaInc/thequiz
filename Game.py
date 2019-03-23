@@ -1,11 +1,12 @@
 import os
 import time
 
+import pygame
+
 import Dialogue
 import Quest1
 import Quest2
 import eztext
-import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
@@ -460,7 +461,7 @@ if __name__ == "__main__":
                   '3(Townfolk-Adult-M-006)',
                   '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 
-        hero = HEROES[0]
+        hero = HEROES[5]
         Game(hero, "SuperHero")
 
 

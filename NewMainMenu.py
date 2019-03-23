@@ -1,7 +1,7 @@
-import pygame
 import os
-from Egg import Egg
 import time
+
+import pygame
 
 
 class NewMainMenu:
@@ -81,9 +81,12 @@ class NewMainMenu:
     def set_interface(self):
         directory = os.getcwd()
 
-        self.background_surf = pygame.image.load(directory + '/backgrounds/main.jpg')
-        self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
-        self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+        self.background_surf = pygame.image.load(
+            directory + '/backgrounds/main.jpg')
+        self.background_surf = pygame.transform.scale(self.background_surf,
+                                                      (1000, 600))
+        self.background_rect = self.background_surf.get_rect(
+            bottomright=(1000, 600))
 
         # LOAD MUSIC
         pygame.mixer.music.load(directory + '/sounds/loading.mp3')

@@ -69,7 +69,7 @@ class MainMenu:
 
         # LOAD BACKGROUND
         self.background_surf = pygame.image.load(
-            directory + '/backgrounds/quizFone.jpg')
+            directory + '/backgrounds/quizFone.png')
         self.background_surf = pygame.transform.scale(self.background_surf,
                                                       (1000, 600))
         self.background_rect = self.background_surf.get_rect(
