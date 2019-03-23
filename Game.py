@@ -293,7 +293,7 @@ class Game:
                 self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             if not self.michael:
                 if self.level[y // 36][(x + self.speed + 12) // 36] == 0:
                     self.winx += self.speed
@@ -305,7 +305,7 @@ class Game:
                 else:
                     self.up, self.left = None, None
             self.up, self.left = None, True
-        elif keys[pygame.K_RIGHT]:
+        elif keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             if not self.michael:
                 if self.level[y // 36][(x - self.speed) // 36] == 0:
                     self.winx -= self.speed
@@ -317,7 +317,7 @@ class Game:
                 else:
                     self.up, self.left = None, None
             self.up, self.left = None, False
-        elif keys[pygame.K_UP]:
+        elif keys[pygame.K_UP] or keys[pygame.K_w]:
             if not self.michael:
                 if self.level[(y + self.speed) // 36][x // 36] == 0:
                     self.winy += self.speed
@@ -329,7 +329,7 @@ class Game:
                 else:
                     self.up, self.left = None, None
             self.up, self.left = True, None
-        elif keys[pygame.K_DOWN]:
+        elif keys[pygame.K_DOWN] or keys[pygame.K_s]:
             if not self.michael:
                 if self.level[(y - self.speed) // 36][x // 36] == 0:
                     self.winy -= self.speed
@@ -467,7 +467,7 @@ if __name__ == "__main__":
                   '3(Townfolk-Adult-M-006)',
                   '4(coriander publish.)', '5(Mushroom-01)', '6(Cultist)']
 
-        hero = HEROES[5]
+        hero = HEROES[1]
         Game(hero, "SuperHero")
 
 
