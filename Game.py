@@ -20,6 +20,7 @@ class Game:
         self.winx, self.winy = 2852, 1805
 
         self.eggs = 0
+        self.greeting = True
         self.falls = True
         self.queen = True
         self.sonic = True
@@ -74,6 +75,12 @@ class Game:
                     running = False
                     self.pushed = 'exit'
                 if event.type == pygame.KEYDOWN:
+                    if self.greeting:
+                        self.greeting = False
+                        phrases = Dialogue.create_dialogue00()
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
                     if event.key == 27:
                         p = Pause(self.screen, self)
                         if p.pushed == p.quit:
@@ -419,7 +426,6 @@ class Game:
         self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
         self.npc2_x, self.npc2_y = -2590 + self.winx, -1460 + self.winy
         self.screen.blit(self.guide, (self.npc2_x, self.npc2_y))
-        # print(self.npc2_x - 472 ,self.npc2_y - 210)
         self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
         self.screen.blit(self.nameNpc2, (self.npc2_x - 10, self.npc2_y - 10))
 

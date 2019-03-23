@@ -56,6 +56,21 @@ class Dialogue:
         self.screen.blit(self.cursor, rect)
 
 
+def create_dialogue00():
+    font = pygame.font.Font('fonts/comic.ttf', 16)
+
+    return [(font.render("Добро пожаловать в", 1, (0, 0, 0)), (10, 0)),
+            (font.render("The Quiz, игру главной", 1, (0, 0, 0)), (10, 15)),
+            (font.render("целью которой явлется", 1, (0, 0, 0)), (10, 30)),
+            (font.render("поиск пасхалок", 1, (0, 0, 0)), (10, 45)),
+            (font.render("и разгадка загадок.", 1, (0, 0, 0)), (10, 60)),
+            (font.render("Чтобы узнать больше", 1, (0, 0, 0)), (10, 75)),
+            (font.render("отправляйтесь к гиду", 1, (0, 0, 0)), (10, 90)),
+            (
+            font.render("Абраму. Он знает здесь все", 1, (0, 0, 0)), (10, 105)),
+            (font.render("(или почти все)", 1, (0, 0, 0)), (10, 120))]
+
+
 def create_dialogue01():
     font = pygame.font.Font('fonts/comic.ttf', 16)
 
