@@ -89,7 +89,7 @@ class NewMainMenu:
             bottomright=(1000, 600))
 
         # LOAD MUSIC
-        pygame.mixer.music.load(directory + '/sounds/loading.mp3')
+        pygame.mixer.music.load(directory + '/sounds/radio/1.mp3')
         pygame.mixer.music.play(-1)
         pygame.mixer.music.set_volume(1)
 

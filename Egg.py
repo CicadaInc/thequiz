@@ -28,7 +28,7 @@ class Egg:
                     stop = True
                     self.pushed = 'exit'
             if stop:
-                pygame.mixer.music.load(self.directory + '/sounds/loading.mp3')
+                pygame.mixer.music.load(self.directory + '/sounds/radio/1.mp3')
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 break

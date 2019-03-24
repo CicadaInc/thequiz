@@ -1,12 +1,11 @@
 import os
 import time
 
-import pygame
-
 import Dialogue
 import Quest1
 import Quest2
 import eztext
+import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
@@ -19,6 +18,7 @@ class Game:
         self.winw, self.winh = 1000, 600
         self.winx, self.winy = 2852, 1805
 
+        self.needEggs = 6
         self.eggs = 0
         self.greeting = True
         self.falls = True
@@ -33,10 +33,19 @@ class Game:
         self.screen = pygame.display.set_mode((1000, 600))
         pygame.display.set_caption("TheQuiz")
 
+        self.music = 0
+        self.musicList = [
+            'sounds/radio/1.mp3',
+            'sounds/radio/2.mp3',
+            'sounds/radio/3.mp3',
+            'sounds/radio/4.mp3'
+        ]
+        self.lessonEasterEgg = True
         self.michael = False
         self.keysEggs = ''
         self.level = field
         self.directory = os.getcwd()
+        self.sonicDogs = True
 
         self.show_info_flower = False
         self.solved1, self.solved2, self.solved3 = False, False, False
@@ -78,6 +87,14 @@ class Game:
                     if self.greeting:
                         self.greeting = False
                         phrases = Dialogue.create_dialogue00()
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
+                        phrases = Dialogue.create_dialogue16()
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
+                        phrases = Dialogue.create_dialogue17()
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -176,6 +193,15 @@ class Game:
 
             self.textbox.update(self.events)
 
+            if 'fm' in self.textbox.value:
+                self.music += 1
+                self.directory = os.getcwd()
+                pygame.mixer.music.load(
+                    self.directory + '/' + self.musicList[self.music % 4])
+                pygame.mixer.music.play(-1)
+                pygame.mixer.music.set_volume(1)
+                self.textbox.value = ''
+
             if 'falls' in self.textbox.value or 'gravity' in self.textbox.value:
                 if self.falls:
                     self.eggs += 1
@@ -183,6 +209,12 @@ class Game:
                         self.directory + '/sounds/gravity.mp3')
                     self.textbox.value = ''
                     self.falls = False
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
             if 'queen' in self.textbox.value or 'free' in self.textbox.value:
                 if self.queen:
@@ -191,6 +223,12 @@ class Game:
                         self.directory + '/sounds/queen.mp3')
                     self.textbox.value = ''
                     self.queen = False
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
             if 'sonic' in self.textbox.value:
                 if self.sonic:
@@ -199,6 +237,13 @@ class Game:
                         self.directory + '/sounds/sonic.mp3')
                     self.textbox.value = ''
                     self.sonic = False
+                    self.speed *= 3
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
             if 'watch' in self.textbox.value or 'dogs' in self.textbox.value:
                 if self.watchdogs:
@@ -207,6 +252,12 @@ class Game:
                         self.directory + '/sounds/dogs.mp3')
                     self.textbox.value = ''
                     self.watchdogs = False
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
             if 'python' in self.textbox.value:
                 if self.python:
@@ -215,6 +266,12 @@ class Game:
                         self.directory + '/sounds/dogs.mp3')
                     self.textbox.value = ''
                     self.python = False
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
             if 'michael' in self.textbox.value or 'jackson' in self.textbox.value:
                 if self.jackson:
@@ -224,8 +281,14 @@ class Game:
                     self.textbox.value = ''
                     self.michael = not self.michael
                     self.jackson = False
+                    if self.eggs != self.needEggs:
+                        phrases = Dialogue.create_dialogue18(
+                            self.needEggs - self.eggs)
+                        di = Dialogue.Dialogue(self.screen, self, phrases)
+                        if di.pushed == 'exit':
+                            running = False
 
-            if self.eggs == 6:
+            if self.eggs == self.needEggs:
                 self.surf = pygame.image.load(
                     self.directory + '/levels/theend.jpg')
                 self.rect = self.surf.get_rect(bottomright=(1000, 600))
@@ -266,16 +329,25 @@ class Game:
                 pygame.mixer.music.set_volume(1)
                 self.music_played = True
 
-            elif y // 36 == 6 and x // 36 == 66 and not self.music_played:
+            elif y // 36 == 51 and x // 36 == 96:
+                if self.sonicDogs:
+                    phrases = Dialogue.create_dialogue19()
+                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                    if di.pushed == 'exit':
+                        running = False
+                    self.sonicDogs = False
+
+            elif y // 36 == 38 and x // 36 == 47 and not self.music_played:
                 pygame.mixer.music.load(
                     self.directory + '/sounds/morse_code.mp3')
-                pygame.mixer.music.play(0)
+                pygame.mixer.music.play(1)
                 pygame.mixer.music.set_volume(1)
-                stime = 0
+                event = pygame.event.wait()
                 self.music_played = True
 
             elif stime > 1500 and self.music_played:
-                pygame.mixer.music.load(self.directory + '/sounds/loading.mp3')
+                pygame.mixer.music.load(
+                    self.directory + '/' + self.musicList[self.music % 4])
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 stime = 0

@@ -26,8 +26,7 @@ while True:
                     if gameWin.pushed == 'exit':
                         break
                     elif gameWin.pushed == 'exit_main':
-                        input()
-
+                        continue
                 elif chooseChar.pushed == 'exit':
                     break
             else:
