@@ -1,12 +1,11 @@
 import os
 import time
 
-import pygame
-
 import Dialogue
 import Quest1
 import Quest2
 import eztext
+import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
@@ -70,7 +69,7 @@ class Game:
 
         self.k = 0
         self.pushed = None
-        self.anim, self.speed = 0, 20
+        self.anim, self.speed = 0, 5
 
         self.set_interface()
 
@@ -82,7 +81,7 @@ class Game:
                 stime += t
 
             x, y = (self.winx - 525) - self.winw // 2, (
-                self.winy - 250) - self.winh // 2
+                    self.winy - 250) - self.winh // 2
             print(y // 36, x // 36)
             print(self.winx, self.winy)
 
@@ -94,15 +93,15 @@ class Game:
                 if event.type == pygame.KEYDOWN:
                     if self.greeting:
                         self.greeting = False
-                        phrases = Dialogue.create_dialogue00()
+                        phrases = Dialogue.create_greeting_dialogue1()
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
-                        phrases = Dialogue.create_dialogue16()
+                        phrases = Dialogue.create_greeting_dialogue2()
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
-                        phrases = Dialogue.create_dialogue17()
+                        phrases = Dialogue.create_greeting_dialogue3()
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -114,11 +113,11 @@ class Game:
                     elif event.key == 101:
                         self.keysEggs += 'e'
                         if abs(self.npc1_x - 470) < 35 and abs(
-                                        self.npc1_y - 200) < 35:
+                                self.npc1_y - 200) < 35:
                             if not self.solved1:
-                                phrases = Dialogue.create_dialogue11()
+                                phrases = Dialogue.create_dialogue_for_quest1()
                             else:
-                                phrases = Dialogue.create_dialogue15()
+                                phrases = Dialogue.create_dialogue_for_quest1_3()
                                 self.solved3 = True
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
@@ -134,10 +133,14 @@ class Game:
                             if di.pushed == 'exit':
                                 running = False
                             mars1 = True
-
+                        elif y // 36 == 32 and x // 36 == 83:
+                            phrases = Dialogue.create_dialogue22()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                running = False
                         elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 \
                                 and not self.solved1:
-                            phrases = Dialogue.create_dialogue12()
+                            phrases = Dialogue.create_dialogue_for_quest1_2()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 self.pushed = 'exit'
@@ -150,20 +153,20 @@ class Game:
                                     running = False
                                 elif di.pushed == 'valid':
                                     self.solved1 = True
-                                    phrases = Dialogue.create_dialogue13()
+                                    phrases = Dialogue.create_win_dialogue_for_quest1()
                                 elif di.pushed == 'wrong':
-                                    phrases = Dialogue.create_dialogue14()
+                                    phrases = Dialogue.create_wrong_dialogue_for_quests()
                                 if not (
-                                            di.pushed is None) and di.pushed != 'exit':
+                                        di.pushed is None) and di.pushed != 'exit':
                                     di = Dialogue.Dialogue(self.screen, self,
                                                            phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
                         elif abs(self.npc2_x - 472) < 35 and abs(
-                                        self.npc2_y - 210) < 35:
+                                self.npc2_y - 210) < 35:
                             if not self.solved2:
-                                phrases = Dialogue.create_dialogue01()
+                                phrases = Dialogue.create_guide_dialogue1()
                                 di = Dialogue.Dialogue(self.screen, self,
                                                        phrases)
                                 if di.pushed == 'exit':
@@ -171,24 +174,24 @@ class Game:
                             else:
                                 if not self.show_info_flower:
                                     self.show_info_flower = True
-                                    phrases = Dialogue.create_dialogue04()
+                                    phrases = Dialogue.create_guide_dialogue2()
                                     di = Dialogue.Dialogue(self.screen, self,
                                                            phrases)
                                     if di.pushed == 'exit':
                                         running = False
-                                phrases = Dialogue.create_dialogue05()
+                                phrases = Dialogue.create_guide_dialogue3()
                                 di = Dialogue.Dialogue(self.screen, self,
                                                        phrases)
                                 if di.pushed == 'exit':
                                     running = False
-                                phrases = Dialogue.create_dialogue06()
+                                phrases = Dialogue.create_guide_dialogue4()
                                 di = Dialogue.Dialogue(self.screen, self,
                                                        phrases)
                                 if di.pushed == 'exit':
                                     running = False
                         elif 3737 >= self.winx >= 3507 and 835 >= self.winy >= 780 \
                                 and not self.solved2:
-                            phrases = Dialogue.create_dialogue02()
+                            phrases = Dialogue.create_dialogue_for_quest2()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 self.pushed = 'exit'
@@ -201,11 +204,13 @@ class Game:
                                     running = False
                                 elif di.pushed == 'valid':
                                     self.solved2 = True
-                                    phrases = Dialogue.create_dialogue03()
+                                    phrases = Dialogue.create_win_dialogue_for_quest2()
                                 elif di.pushed == 'wrong':
-                                    phrases = Dialogue.create_dialogue14()
-                                if not (di.pushed is None) and di.pushed != 'exit':
-                                    di = Dialogue.Dialogue(self.screen, self, phrases)
+                                    phrases = Dialogue.create_wrong_dialogue_for_quests()
+                                if not (
+                                        di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self,
+                                                           phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
@@ -215,7 +220,8 @@ class Game:
             if 'fm' in self.textbox.value:
                 self.music += 1
                 self.directory = os.getcwd()
-                pygame.mixer.music.load(self.directory + '/' + self.musicList[self.music % 4])
+                pygame.mixer.music.load(
+                    self.directory + '/' + self.musicList[self.music % 4])
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 self.textbox.value = ''
@@ -228,7 +234,8 @@ class Game:
                     self.textbox.value = ''
                     self.falls = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -241,7 +248,8 @@ class Game:
                     self.textbox.value = ''
                     self.queen = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -255,7 +263,8 @@ class Game:
                     self.sonic = False
                     self.speed *= 3
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -268,7 +277,8 @@ class Game:
                     self.textbox.value = ''
                     self.watchdogs = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -281,7 +291,8 @@ class Game:
                     self.textbox.value = ''
                     self.python = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -295,7 +306,8 @@ class Game:
                     self.michael = not self.michael
                     self.jackson = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue_for_eggs(
+                            self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -324,7 +336,7 @@ class Game:
                 running = False
                 self.pushed = 'exit'
 
-            if y // 36 == 48 and x // 36 == 13 and not self.music_played:
+            if y // 36 == 4 and x // 36 == 7 and not self.music_played:
                 pygame.mixer.music.load(self.directory + '/sounds/NLO.mp3')
                 pygame.mixer.music.play(0)
                 pygame.mixer.music.set_volume(1)
@@ -354,7 +366,8 @@ class Game:
                 self.music_played = True
 
             elif stime > 1500 and self.music_played:
-                pygame.mixer.music.load(self.directory + '/' + self.musicList[self.music % 4])
+                pygame.mixer.music.load(
+                    self.directory + '/' + self.musicList[self.music % 4])
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 stime = 0
@@ -369,7 +382,7 @@ class Game:
 
     def move_player(self):
         x, y = (self.winx - 525) - self.winw // 2, (
-            self.winy - 250) - self.winh // 2
+                self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
@@ -429,8 +442,8 @@ class Game:
             self.winx = 4650
         if self.winx < 1125:
             self.winx = 1125
-        if self.winy > 2690:
-            self.winy = 2690
+        if self.winy > 2670:
+            self.winy = 2670
         if self.winy < 670:
             self.winy = 670
 
