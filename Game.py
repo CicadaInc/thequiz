@@ -1,11 +1,12 @@
 import os
 import time
 
+import pygame
+
 import Dialogue
 import Quest1
 import Quest2
 import eztext
-import pygame
 from Egg import Egg
 from Pause import Pause
 from create_field import field
@@ -63,11 +64,13 @@ class Game:
         self.right = None
         self.up = None
 
+        mars1 = False
+
         stime = 0
 
         self.k = 0
         self.pushed = None
-        self.anim, self.speed = 0, 5
+        self.anim, self.speed = 0, 20
 
         self.set_interface()
 
@@ -77,6 +80,11 @@ class Game:
 
             if self.music_played:
                 stime += t
+
+            x, y = (self.winx - 525) - self.winw // 2, (
+                self.winy - 250) - self.winh // 2
+            print(y // 36, x // 36)
+            print(self.winx, self.winy)
 
             self.events = pygame.event.get()
             for event in self.events:
@@ -106,14 +114,27 @@ class Game:
                     elif event.key == 101:
                         self.keysEggs += 'e'
                         if abs(self.npc1_x - 470) < 35 and abs(
-                                self.npc1_y - 200) < 35:
+                                        self.npc1_y - 200) < 35:
                             if not self.solved1:
                                 phrases = Dialogue.create_dialogue11()
                             else:
                                 phrases = Dialogue.create_dialogue15()
+                                self.solved3 = True
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 running = False
+                            phrases = Dialogue.create_dialogue20()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                running = False
+
+                        elif y // 36 == 4 and x // 36 == 93:
+                            phrases = Dialogue.create_dialogue21()
+                            di = Dialogue.Dialogue(self.screen, self, phrases)
+                            if di.pushed == 'exit':
+                                running = False
+                            mars1 = True
+
                         elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 \
                                 and not self.solved1:
                             phrases = Dialogue.create_dialogue12()
@@ -133,14 +154,14 @@ class Game:
                                 elif di.pushed == 'wrong':
                                     phrases = Dialogue.create_dialogue14()
                                 if not (
-                                        di.pushed is None) and di.pushed != 'exit':
+                                            di.pushed is None) and di.pushed != 'exit':
                                     di = Dialogue.Dialogue(self.screen, self,
                                                            phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
                         elif abs(self.npc2_x - 472) < 35 and abs(
-                                self.npc2_y - 210) < 35:
+                                        self.npc2_y - 210) < 35:
                             if not self.solved2:
                                 phrases = Dialogue.create_dialogue01()
                                 di = Dialogue.Dialogue(self.screen, self,
@@ -183,10 +204,8 @@ class Game:
                                     phrases = Dialogue.create_dialogue03()
                                 elif di.pushed == 'wrong':
                                     phrases = Dialogue.create_dialogue14()
-                                if not (
-                                        di.pushed is None) and di.pushed != 'exit':
-                                    di = Dialogue.Dialogue(self.screen, self,
-                                                           phrases)
+                                if not (di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self, phrases)
                                     if di.pushed == 'exit':
                                         self.pushed = 'exit'
                                         running = False
@@ -196,8 +215,7 @@ class Game:
             if 'fm' in self.textbox.value:
                 self.music += 1
                 self.directory = os.getcwd()
-                pygame.mixer.music.load(
-                    self.directory + '/' + self.musicList[self.music % 4])
+                pygame.mixer.music.load(self.directory + '/' + self.musicList[self.music % 4])
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 self.textbox.value = ''
@@ -210,8 +228,7 @@ class Game:
                     self.textbox.value = ''
                     self.falls = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -224,8 +241,7 @@ class Game:
                     self.textbox.value = ''
                     self.queen = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -239,8 +255,7 @@ class Game:
                     self.sonic = False
                     self.speed *= 3
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -253,8 +268,7 @@ class Game:
                     self.textbox.value = ''
                     self.watchdogs = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -267,8 +281,7 @@ class Game:
                     self.textbox.value = ''
                     self.python = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
@@ -282,13 +295,12 @@ class Game:
                     self.michael = not self.michael
                     self.jackson = False
                     if self.eggs != self.needEggs:
-                        phrases = Dialogue.create_dialogue18(
-                            self.needEggs - self.eggs)
+                        phrases = Dialogue.create_dialogue18(self.needEggs - self.eggs)
                         di = Dialogue.Dialogue(self.screen, self, phrases)
                         if di.pushed == 'exit':
                             running = False
 
-            if self.eggs == self.needEggs:
+            if self.eggs == self.needEggs and self.solved1 and self.solved2 and self.solved3:
                 self.surf = pygame.image.load(
                     self.directory + '/levels/theend.jpg')
                 self.rect = self.surf.get_rect(bottomright=(1000, 600))
@@ -312,11 +324,6 @@ class Game:
                 running = False
                 self.pushed = 'exit'
 
-            x, y = (self.winx - 525) - self.winw // 2, (
-                    self.winy - 250) - self.winh // 2
-            print(y // 36, x // 36)
-            print(self.winx, self.winy)
-
             if y // 36 == 48 and x // 36 == 13 and not self.music_played:
                 pygame.mixer.music.load(self.directory + '/sounds/NLO.mp3')
                 pygame.mixer.music.play(0)
@@ -337,17 +344,17 @@ class Game:
                         running = False
                     self.sonicDogs = False
 
-            elif y // 36 == 38 and x // 36 == 47 and not self.music_played:
+            elif y // 36 == 6 and x // 36 == 66 and not self.music_played:
                 pygame.mixer.music.load(
                     self.directory + '/sounds/morse_code.mp3')
-                pygame.mixer.music.play(1)
+                pygame.mixer.music.play(0)
                 pygame.mixer.music.set_volume(1)
-                event = pygame.event.wait()
+                pygame.event.wait()
+                stime = 0
                 self.music_played = True
 
             elif stime > 1500 and self.music_played:
-                pygame.mixer.music.load(
-                    self.directory + '/' + self.musicList[self.music % 4])
+                pygame.mixer.music.load(self.directory + '/' + self.musicList[self.music % 4])
                 pygame.mixer.music.play(-1)
                 pygame.mixer.music.set_volume(1)
                 stime = 0
@@ -362,7 +369,7 @@ class Game:
 
     def move_player(self):
         x, y = (self.winx - 525) - self.winw // 2, (
-                self.winy - 250) - self.winh // 2
+            self.winy - 250) - self.winh // 2
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT] or keys[pygame.K_a]:
@@ -477,12 +484,15 @@ class Game:
             pygame.image.load("sprites/OldMan.png"), (48, 64))
         self.guide = pygame.transform.scale(
             pygame.image.load("sprites/guide.png"), (48, 64))
+        self.ilon_mask = pygame.transform.scale(
+            pygame.image.load("sprites/ilon_mask.png"), (48, 64))
 
         font = pygame.font.SysFont('Trebuchet MS', 12)
         font.set_bold(True)
         self.nick = font.render(self.name, False, pygame.Color('blue'))
         self.nameNpc1 = font.render("Brainfuck", 1, pygame.Color('blue'))
         self.nameNpc2 = font.render("Гид Абрам", 1, pygame.Color('blue'))
+        self.nameNpc3 = font.render("Ilon Mysk", 1, pygame.Color('blue'))
 
         self.textbox = eztext.Input(maxlength=1000, color=(0, 0, 0), prompt='',
                                     font=self.font)
@@ -498,8 +508,11 @@ class Game:
         self.screen.blit(self.oldMan, (self.npc1_x, self.npc1_y))
         self.npc2_x, self.npc2_y = -2590 + self.winx, -1460 + self.winy
         self.screen.blit(self.guide, (self.npc2_x, self.npc2_y))
+        self.npc3_x, self.npc3_y = -3950 + self.winx, -535 + self.winy
+        self.screen.blit(self.ilon_mask, (self.npc3_x, self.npc3_y))
         self.screen.blit(self.nameNpc1, (self.npc1_x - 10, self.npc1_y - 15))
         self.screen.blit(self.nameNpc2, (self.npc2_x - 10, self.npc2_y - 10))
+        self.screen.blit(self.nameNpc3, (self.npc3_x - 10, self.npc3_y - 5))
 
         self.screen.blit(self.nick,
                          (self.startx - self.nick.get_width() // 2 + 24,
