@@ -1,6 +1,7 @@
 import os
-import pygame
 from math import ceil
+
+import pygame
 
 
 class Camera:
@@ -17,7 +18,7 @@ class Camera:
     # позиционировать камеру на объекте target
     def update(self, target):
         self.dx = -(target.rect.x + target.rect.w // 2 - 500 // 2)
-        self.dy = -(target.rect.y + target.rect.h // 2 - 300// 2)
+        self.dy = -(target.rect.y + target.rect.h // 2 - 300 // 2)
 
 
 class MainGameLevel():
@@ -75,16 +76,20 @@ class MainGameLevel():
                 self.speed = 6
 
             keys = pygame.key.get_pressed()
-            if keys[pygame.K_LEFT] and field[ceil(y // 25)][ceil((x - 8) // 25)] in [0, 3, 4]:
+            if keys[pygame.K_LEFT] and field[ceil(y // 25)][
+                ceil((x - 8) // 25)] in [0, 3, 4]:
                 self.x -= self.speed
                 self.left, self.up = True, None
-            elif keys[pygame.K_RIGHT] and field[ceil(y // 25)][ceil((x + 8) // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_RIGHT] and field[ceil(y // 25)][
+                ceil((x + 8) // 25)] in [0, 3, 4]:
                 self.x += self.speed
                 self.left, self.up = False, None
-            elif keys[pygame.K_UP] and field[ceil((y - 11) // 25)][ceil(x // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_UP] and field[ceil((y - 11) // 25)][
+                ceil(x // 25)] in [0, 3, 4]:
                 self.y -= self.speed
                 self.up, self.left = True, None
-            elif keys[pygame.K_DOWN] and field[ceil((y + 11) // 25)][ceil(x // 25)] in [0, 3, 4]:
+            elif keys[pygame.K_DOWN] and field[ceil((y + 11) // 25)][
+                ceil(x // 25)] in [0, 3, 4]:
                 self.y += self.speed
                 self.up, self.left = False, None
             else:
@@ -97,20 +102,27 @@ class MainGameLevel():
     def load_animations(self):
         for i in range(1, 17):
             self.walkRight.append(
-                pygame.image.load(self.directory + "/sprites/RIGHT_" + str(i) + '.png'))
+                pygame.image.load(
+                    self.directory + "/sprites/RIGHT_" + str(i) + '.png'))
             self.walkLeft.append(
-                pygame.image.load(self.directory + "/sprites/LEFT_" + str(i) + '.png'))
-            self.walkUp.append(pygame.image.load(self.directory + "/sprites/UP_" + str(i) + '.png'))
+                pygame.image.load(
+                    self.directory + "/sprites/LEFT_" + str(i) + '.png'))
+            self.walkUp.append(pygame.image.load(
+                self.directory + "/sprites/UP_" + str(i) + '.png'))
             self.walkDown.append(
-                pygame.image.load(self.directory + "/sprites/DOWN_" + str(i) + '.png'))
+                pygame.image.load(
+                    self.directory + "/sprites/DOWN_" + str(i) + '.png'))
 
         self.STAY = pygame.image.load(self.directory + "/sprites/STAY.png")
 
     def load_background(self):
         # LOAD BACKGROUND
-        background_surf = pygame.image.load(self.directory + '/levels/' + self.level)
-        background_surf = pygame.transform.scale(background_surf, (self.winw, self.winh))
-        background_rect = background_surf.get_rect(bottomright=(self.winw, self.winh))
+        background_surf = pygame.image.load(
+            self.directory + '/levels/' + self.level)
+        background_surf = pygame.transform.scale(background_surf,
+                                                 (self.winw, self.winh))
+        background_rect = background_surf.get_rect(
+            bottomright=(self.winw, self.winh))
         self.screen.blit(background_surf, background_rect)
 
     def draw(self):
@@ -124,13 +136,16 @@ class MainGameLevel():
             self.anim = 0
         else:
             if not self.left and not (self.left is None):
-                self.screen.blit(self.walkRight[self.anim // 4], (self.x, self.y))
+                self.screen.blit(self.walkRight[self.anim // 4],
+                                 (self.x, self.y))
             elif self.left:
-                self.screen.blit(self.walkLeft[self.anim // 4], (self.x, self.y))
+                self.screen.blit(self.walkLeft[self.anim // 4],
+                                 (self.x, self.y))
             elif self.up:
                 self.screen.blit(self.walkUp[self.anim // 4], (self.x, self.y))
             elif not self.up:
-                self.screen.blit(self.walkDown[self.anim // 4], (self.x, self.y))
+                self.screen.blit(self.walkDown[self.anim // 4],
+                                 (self.x, self.y))
             self.anim += 2
 
 
@@ -139,7 +154,8 @@ if __name__ == "__main__":
 
 
     def test():
-        win = MainGameLevel(1000, 600, "theQuiz", 100, 60, "MainLocation.jpg", field)
+        win = MainGameLevel(1000, 600, "theQuiz", 100, 60, "MainLocation.jpg",
+                            field)
 
 
     test()

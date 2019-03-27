@@ -1,6 +1,8 @@
-import pygame
-import eztext
 import os
+
+import pygame
+
+import eztext
 
 
 class ChooseCharacter:
@@ -70,10 +72,12 @@ class ChooseCharacter:
         for y in range(150, 301, 150):
             for x in range(50, 351, 150):
                 i += 1
-                pygame.draw.rect(self.screen, pygame.Color('black'), pygame.Rect(x, y, 100, 100), 2)
+                pygame.draw.rect(self.screen, pygame.Color('black'),
+                                 pygame.Rect(x, y, 100, 100), 2)
 
                 if self.choosed == i - 1:
-                    pygame.draw.rect(self.screen, pygame.Color('red'), pygame.Rect(x, y, 100, 100), 2)
+                    pygame.draw.rect(self.screen, pygame.Color('red'),
+                                     pygame.Rect(x, y, 100, 100), 2)
 
                 character = self.characters[i - 1]
                 self.screen.blit(character, (x + 2, y + 2))
@@ -96,16 +100,20 @@ class ChooseCharacter:
         directory = os.getcwd()
 
         # LOAD BACKGROUND
-        self.background_surf = pygame.image.load(directory + '/backgrounds/quizFone.jpg')
-        self.background_surf = pygame.transform.scale(self.background_surf, (1000, 600))
-        self.background_rect = self.background_surf.get_rect(bottomright=(1000, 600))
+        self.background_surf = pygame.image.load(
+            directory + '/backgrounds/quizFone.png')
+        self.background_surf = pygame.transform.scale(self.background_surf,
+                                                      (1000, 600))
+        self.background_rect = self.background_surf.get_rect(
+            bottomright=(1000, 600))
         self.screen.blit(self.background_surf, self.background_rect)
 
         # КУРСОР
         self.cursor = pygame.image.load('sprites/ForGUI/cursor1.png')
 
         # ПОЛЕ ДЛЯ ВВОДА НИКА
-        self.textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='', font=self.font)
+        self.textbox = eztext.Input(maxlength=10, color=(0, 0, 0), prompt='',
+                                    font=self.font)
         self.textbox.set_pos(655, 155)
 
         # BUTTON BACK
@@ -122,8 +130,10 @@ class ChooseCharacter:
 
                 self.chooseButtons.append(pygame.Rect(x, y, 100, 100))
 
-                character = pygame.image.load('sprites/characters/' + str(i) + '.png')
-                self.characters.append(pygame.transform.scale(character, (97, 97)))
+                character = pygame.image.load(
+                    'sprites/characters/' + str(i) + '.png')
+                self.characters.append(
+                    pygame.transform.scale(character, (97, 97)))
 
         # КНОПКА СТАРТА
         self.start = pygame.Rect(750, 515, 200, 35)
@@ -131,7 +141,8 @@ class ChooseCharacter:
         self.text_x_2, self.text_y_2 = 850 - self.text_start.get_width() // 2, 550 - self.text_start.get_height()
 
         # НАДПИСИ
-        self.text_view = self.font.render("Выберите персонажа", 1, (100, 25, 100))
+        self.text_view = self.font.render("Выберите персонажа", 1,
+                                          (100, 25, 100))
         self.text_x_3, self.text_y_3 = 65, 60
 
         self.text_name = self.font.render("Введите имя", 1, (100, 25, 100))
