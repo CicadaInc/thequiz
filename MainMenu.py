@@ -57,7 +57,6 @@ class MainMenu:
         for button in self.buttons:
             if self.motionButton == button[1]:
                 self.screen.blit(self.images[self.i][self.status], button[1])
-                print(self.images)
                 self.status += 1
 
                 if self.status == 30:

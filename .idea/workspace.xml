@@ -1,7 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9fb9acd-d6a1-4189-83a6-f329ab9fd331" name="Default" comment="" />
+    <list default="true" id="c9fb9acd-d6a1-4189-83a6-f329ab9fd331" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Quest3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainMenu.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewMainMenu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/TМ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/choose.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/cicada_logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/main11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFone v2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFone.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/quizFonetest.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backgrounds/ь.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_field.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_field.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findEggs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/24x32 black characters pack.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/24x32-characters-big-pack-by-Svetlana-Kushnariova.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/DOWN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/LEFT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/RIGHT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/STAY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/UP_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/DemoCharacter/character.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/ForGUI/cursor2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/Inner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/DOWN_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/LEFT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/RIGHT_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/STAY.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MainCharacter/UP_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/MaybeNewSprites/walkcyclevarious.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/NPC_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/Overworld.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/Townfolk-Adult-M-007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/cave.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Aristocrat-M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Aristocrate-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Aristocrate-F-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Aristocrate-F-03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Aristocrate-F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Bard-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Clown_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Cultist-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Dancer-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Fighter-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Fighter-F-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Fighter-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Fighter-M-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Flower-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/GrassSpirit-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Healer-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Healer-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/King_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Mage-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Mage-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Mask-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Mermaid_01.bmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Mushroom-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/NPC_F-(Amanda).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Pepper publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Pirate-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Poprigunchik_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Prince-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Princess-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Ranger-F-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Ranger-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Seed-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Shrump-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Snow-M-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F-006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-007.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-008.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M-009.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Adult-M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-F-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-F-002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-M-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-M-002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Child-M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Old-F-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Old-F.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Old-M-001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Old-M-002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/Townfolk-Old-M.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/carrot..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/coriander publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/saffron publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/characters/shichimi publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/log.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/objects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprites/shichimi publish..png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,13 +245,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="26" selection-end-column="29" />
+              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="26" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SUPERFOREXE.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -25,8 +271,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="309" column="68" lean-forward="true" selection-start-line="309" selection-start-column="68" selection-end-line="309" selection-end-column="68" />
+            <state relative-caret-position="5355">
+              <caret line="326" column="68" selection-start-line="326" selection-start-column="68" selection-end-line="326" selection-end-column="68" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -37,7 +283,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Quest2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-970">
+            <state relative-caret-position="153">
               <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -333,39 +579,11 @@
     <entry file="file://$PROJECT_DIR$/sprites/cave.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/field.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Statistic.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/findEggs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-851">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/field.py" />
+    <entry file="file://$PROJECT_DIR$/README.txt" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/Statistic.py" />
+    <entry file="file://$PROJECT_DIR$/findEggs.py" />
     <entry file="file://$PROJECT_DIR$/eztext.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -373,16 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NewMainMenu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/NewMainMenu.py" />
     <entry file="file://$PROJECT_DIR$/Pause.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -482,16 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Quest2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../задачки/archives.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -544,22 +743,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="26" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="309" column="68" lean-forward="true" selection-start-line="309" selection-start-column="68" selection-end-line="309" selection-end-column="68" />
+        <state relative-caret-position="5355">
+          <caret line="326" column="68" selection-start-line="326" selection-start-column="68" selection-end-line="326" selection-end-column="68" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/Quest2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="48" lean-forward="true" selection-start-line="25" selection-start-column="48" selection-end-line="26" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SUPERFOREXE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

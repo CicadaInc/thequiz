@@ -4,9 +4,9 @@ from ChooseCharacter import ChooseCharacter
 from Game import Game
 from MainMenu import MainMenu
 from MoreInformation import Information
-from NewMainMenu import NewMainMenu
+from Greeting import Greeting
 
-mainWin0 = NewMainMenu()
+mainWin0 = Greeting()
 
 HEROES = ['1(Townfolk-Child-M-001)', '2(Townfolk-Child-M)',
           '3(Townfolk-Adult-M-006)',

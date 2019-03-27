@@ -4,6 +4,7 @@ import time
 import Dialogue
 import Quest1
 import Quest2
+import Quest3
 import eztext
 import pygame
 from Egg import Egg
@@ -64,6 +65,8 @@ class Game:
         self.up = None
 
         mars1 = False
+        mars2 = False
+        mars3 = False
 
         stime = 0
 
@@ -116,29 +119,87 @@ class Game:
                                 self.npc1_y - 200) < 35:
                             if not self.solved1:
                                 phrases = Dialogue.create_dialogue_for_quest1()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
                             else:
                                 phrases = Dialogue.create_dialogue_for_quest1_3()
                                 self.solved3 = True
-                            di = Dialogue.Dialogue(self.screen, self, phrases)
-                            if di.pushed == 'exit':
-                                running = False
-                            phrases = Dialogue.create_dialogue20()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                                phrases = Dialogue.create_dialogue20()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+
+                        if (y // 36 == 4 and x // 36 == 93) or (
+                                y // 36 == 5 and x // 36 == 93):
+                            if mars2 and not mars3:
+                                phrases = Quest3.create_text()
+                                di = Quest3.Quest(self.screen, self, phrases)
+                                if di.pushed == 'exit':
+                                    self.pushed = 'exit'
+                                    running = False
+                                elif di.pushed == 'valid':
+                                    mars3 = True
+                                elif di.pushed == 'wrong':
+                                    phrases = Dialogue.create_wrong_dialogue_for_quests()
+                                if not (
+                                        di.pushed is None) and di.pushed != 'exit':
+                                    di = Dialogue.Dialogue(self.screen, self,
+                                                           phrases)
+                                    if di.pushed == 'exit':
+                                        self.pushed = 'exit'
+                                        running = False
+
+                            if mars3:
+                                # Когда разгадает шифр
+                                phrases = Dialogue.create_dialogue_for_Ilon_4()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                                phrases = Dialogue.create_dialogue_for_Ilon_5()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+
+                            if self.solved3 and not mars1:
+                                phrases = Dialogue.create_dialogue21()
+                                mars1 = True
+                            if not self.solved1 or not self.solved2 or not self.solved3:
+                                phrases = Dialogue.create_dialogue22()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 running = False
 
-                        elif y // 36 == 4 and x // 36 == 93:
-                            phrases = Dialogue.create_dialogue21()
-                            di = Dialogue.Dialogue(self.screen, self, phrases)
-                            if di.pushed == 'exit':
-                                running = False
-                            mars1 = True
-                        elif y // 36 == 32 and x // 36 == 83:
+                        if (y // 36 == 4 and x // 36 == 6) or (
+                                y // 36 == 5 and x // 36 == 6) or (
+                                y // 36 == 6 and x // 36 == 6):
+                            if mars1:
+                                phrases = Dialogue.create_dialogue_for_Ilon_1()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                                phrases = Dialogue.create_dialogue_for_Ilon_2()
+                                di = Dialogue.Dialogue(self.screen, self,
+                                                       phrases)
+                                if di.pushed == 'exit':
+                                    running = False
+                                mars2 = True
+
+                        if y // 36 == 32 and x // 36 == 83:
                             phrases = Dialogue.create_dialogue22()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
                             if di.pushed == 'exit':
                                 running = False
-                        elif 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 \
+                        if 1130 >= self.winx >= 1030 and 2685 >= self.winy >= 2385 \
                                 and not self.solved1:
                             phrases = Dialogue.create_dialogue_for_quest1_2()
                             di = Dialogue.Dialogue(self.screen, self, phrases)
@@ -226,6 +287,12 @@ class Game:
                 pygame.mixer.music.set_volume(1)
                 self.textbox.value = ''
 
+            if 'supergod' in self.textbox.value:
+                self.solved1 = True
+                self.solved2 = True
+                self.solved3 = True
+                self.speed = 10
+
             if 'falls' in self.textbox.value or 'gravity' in self.textbox.value:
                 if self.falls:
                     self.eggs += 1
@@ -261,7 +328,7 @@ class Game:
                         self.directory + '/sounds/sonic.mp3')
                     self.textbox.value = ''
                     self.sonic = False
-                    self.speed *= 3
+                    self.speed *= 2
                     if self.eggs != self.needEggs:
                         phrases = Dialogue.create_dialogue_for_eggs(
                             self.needEggs - self.eggs)
@@ -312,7 +379,7 @@ class Game:
                         if di.pushed == 'exit':
                             running = False
 
-            if self.eggs == self.needEggs and self.solved1 and self.solved2 and self.solved3:
+            if self.eggs == self.needEggs and self.solved1 and self.solved2 and self.solved3 and mars3:
                 self.surf = pygame.image.load(
                     self.directory + '/levels/theend.jpg')
                 self.rect = self.surf.get_rect(bottomright=(1000, 600))
@@ -336,7 +403,7 @@ class Game:
                 running = False
                 self.pushed = 'exit'
 
-            if y // 36 == 4 and x // 36 == 7 and not self.music_played:
+            if y // 36 == 48 and x // 36 == 13 and not self.music_played:
                 pygame.mixer.music.load(self.directory + '/sounds/NLO.mp3')
                 pygame.mixer.music.play(0)
                 pygame.mixer.music.set_volume(1)
@@ -487,7 +554,6 @@ class Game:
         self.background_rect = self.background_surf.get_rect(
             bottomright=(self.winx, self.winy))
         self.screen.blit(self.background_surf, self.background_rect)
-
         self.controls1 = self.font.render("esc - Пауза", 1, (0, 0, 0))
         self.controls1_x, self.controls1_y = 800, 520
         self.controls2 = self.font.render("e - Взаимодействовать", 1, (0, 0, 0))
@@ -531,6 +597,10 @@ class Game:
                          (self.startx - self.nick.get_width() // 2 + 24,
                           self.starty - self.nick.get_height() // 2 - 5))
 
+        pygame.draw.rect(self.screen, (250, 175, 255),
+                         pygame.Rect(800, 515, 250, 43))
+        pygame.draw.rect(self.screen, (0, 0, 0),
+                         pygame.Rect(800, 515, 250, 43), 2)
         self.screen.blit(self.controls1, (self.controls1_x, self.controls1_y))
         self.screen.blit(self.controls2, (self.controls2_x, self.controls2_y))
 
