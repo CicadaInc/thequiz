@@ -260,7 +260,8 @@ def create_dialogue21():
             (font.render("где тут блюдце летающее", 1, (0, 0, 0)), (10, 45)),
             (font.render("упало? Вроде мелькнула на", 1, (0, 0, 0)), (10, 60)),
             (
-            font.render("востоке. Отыщи её и принеси", 1, (0, 0, 0)), (10, 75)),
+                font.render("востоке. Отыщи её и принеси", 1, (0, 0, 0)),
+                (10, 75)),
             (font.render("мне код ошибки. Но знай,", 1, (0, 0, 0)), (10, 90)),
             (font.render("он зашифрован.", 1, (0, 0, 0)), (10, 105))]
 
@@ -1745,7 +1746,7 @@ class Game:
                                 self.pushed = 'exit'
                                 running = False
                             else:
-                                phrases = create_text_for_Quest2
+                                phrases = create_text_for_Quest2()
                                 di = Quest2(self.screen, self, phrases)
                                 if di.pushed == 'exit':
                                     self.pushed = 'exit'
